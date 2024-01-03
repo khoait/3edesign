@@ -6,12 +6,10 @@ import { H1, H2 } from "../typography";
 import ProjectCarouselItem from "../widgets/ProjectCarouselItem.astro";
 
 const projects = await getCollection("projects");
-const sortedProjects = projects.toSorted(
+projects.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
 );
-const featuredProjects = sortedProjects.filter(
-  (project) => project.data.featured,
-);
+const featuredProjects = projects.filter((project) => project.data.featured);
 
 const slide1 = featuredProjects.at(0);
 const slide2 = featuredProjects.at(1);

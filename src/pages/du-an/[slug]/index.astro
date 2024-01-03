@@ -31,11 +31,13 @@ const relatedProjects = projects
     p.data.categories.some((category) =>
       project.data.categories.includes(category),
     ),
-  )
-  .toSorted(
-    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
-  )
-  .slice(0, 3);
+  );
+
+relatedProjects.sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+);
+
+const top3RelatedProjects = relatedProjects.slice(0, 3);
 
 const coverImageSource = (await getImage({ src: project.data.image })).src;
 ---
@@ -85,7 +87,7 @@ const coverImageSource = (await getImage({ src: project.data.image })).src;
 
   <RelatedProjectsSection
     class="mb-40 lg:mb-48"
-    projects={relatedProjects}
+    projects={top3RelatedProjects}
     title={t("section.relatedProjects.title")}
     description={t("section.relatedProjects.subTitle")}
     showArrowButton={true}

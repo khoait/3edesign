@@ -11,15 +11,15 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
-const sortedProjects = projects.toSorted(
+projects.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
 );
-const featuredProject = sortedProjects.find((project) => project.data.featured);
-const otherProjects = sortedProjects.filter(
-  (project) => !project.data.featured,
+const featuredProject = projects.find((project) => project.data.featured);
+const otherProjects = projects.filter(
+  (project) => project.slug !== featuredProject?.slug,
 );
 const allCategories = projects.flatMap((project) => project.data.categories);
-const categories = [...new Set(allCategories)];
+const categories = [...new Set(allCategories)].sort();
 ---
 
 <Layout
