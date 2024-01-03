@@ -1,0 +1,13 @@
+{
+  "page":{
+    "title": "Tuyển dụng",
+    "description": "Chúng tôi luôn tìm kiếm những người tài năng, nhiệt huyết và đam mê để cùng xây dựng ngôi nhà mơ ước cho khách hàng."
+  },
+  "section":{
+    "hero": {
+      "title": "Tham gia đội ngũ chúng tôi.",
+      "subTitle": "Chúng tôi luôn tìm kiếm những người tài năng, nhiệt huyết và đam mê để cùng xây dựng ngôi nhà mơ ước cho khách hàng.",
+      "cta": "Xem các vị trí tuyển dụng"      
+    }
+  }
+}

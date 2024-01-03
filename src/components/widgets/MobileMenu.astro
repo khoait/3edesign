@@ -1,0 +1,39 @@
+---
+import { l, t } from "astro-i18n";
+---
+
+<div id="mobile-menu" class="absolute inset-0 top-40 z-50 hidden">
+  <div
+    class="bg-primary flex h-full flex-col overflow-y-scroll border-t border-gray-200 dark:border-gray-600">
+    <ul>
+      <li>
+        <a
+          href={l("/")}
+          class="hover:bg-secondary focus:bg-secondary text-primary hover:text-team-current block border-b border-gray-200 px-5vw py-9 dark:border-gray-600">
+          {t("nav.home")}
+        </a>
+      </li>
+      <li>
+        <a
+          href={l("/projects")}
+          class="hover:bg-secondary focus:bg-secondary text-primary hover:text-team-current block border-b border-gray-200 px-5vw py-9 dark:border-gray-600">
+          {t("nav.projects")}
+        </a>
+      </li>
+      <li>
+        <a
+          href={l("/about")}
+          class="hover:bg-secondary focus:bg-secondary text-primary hover:text-team-current block border-b border-gray-200 px-5vw py-9 dark:border-gray-600">
+          {t("nav.about")}
+        </a>
+      </li>
+      <li>
+        <a
+          href={l("/contact")}
+          class="hover:bg-secondary focus:bg-secondary text-primary hover:text-team-current block border-b border-gray-200 px-5vw py-9 dark:border-gray-600">
+          {t("nav.contact")}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

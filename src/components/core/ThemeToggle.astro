@@ -1,0 +1,75 @@
+---
+import Icon from "astro-icon";
+---
+
+<button
+  class="theme-toggle border-secondary inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 p-1 transition hover:border-brand focus:border-brand focus:outline-none">
+  <div class="relative h-6 w-6">
+    <span
+      class="absolute inset-0 rotate-90 transform transition-transform duration-700 motion-reduce:duration-[0s] dark:rotate-0">
+      <Icon slot="moonIcon" name="tabler:moon" optimize={false} />
+    </span>
+    <span
+      class="absolute inset-0 rotate-0 transform transition-transform duration-700 motion-reduce:duration-[0s] dark:-rotate-90">
+      <Icon slot="sunIcon" name="tabler:sun" optimize={false} />
+    </span>
+  </div>
+</button>
+
+<style>
+  .theme-toggle span {
+    transform-origin: 50% 100px;
+  }
+</style>
+
+<script>
+  const themeKey = "3edesign-theme";
+
+  function updateHTMLTheme(mode: "light" | "dark") {
+    const themeColorMetaTag = document.head.querySelector(
+      'meta[name="theme-color"]',
+    );
+
+    if (mode === "dark") {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+
+      document.head
+        .querySelector('meta[name="color-scheme"]')
+        ?.setAttribute("content", "dark light");
+      document.head
+        .querySelector("meta[name='theme-color']")
+        ?.setAttribute("content", "#1F2028");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      document.head
+        .querySelector('meta[name="color-scheme"]')
+        ?.setAttribute("content", "light dark");
+      document.head
+        .querySelector("meta[name='theme-color']")
+        ?.setAttribute("content", "#ffffff");
+    }
+  }
+
+  function updateStorageTheme(mode: "light" | "dark") {
+    if (mode === "dark") {
+      localStorage.setItem(themeKey, "dark");
+    } else {
+      localStorage.setItem(themeKey, "light");
+    }
+  }
+
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    updateHTMLTheme(isDark ? "dark" : "light");
+    updateStorageTheme(isDark ? "dark" : "light");
+    window.dispatchEvent(new Event("storage"));
+  };
+
+  const toggles = document.querySelectorAll(".theme-toggle");
+  toggles.forEach((t) => t.addEventListener("click", handleToggleClick));
+</script>

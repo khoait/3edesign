@@ -1,0 +1,65 @@
+---
+import { ArrowLink } from "@components/widgets/arrow-link";
+import { t } from "astro-i18n";
+import { Icon } from "astro-icon";
+import { Grid } from "../Grid";
+import { H3 } from "../typography";
+import SectionHeader from "../widgets/SectionHeader.astro";
+
+const features = [
+  {
+    title: t("section.expertise.expertise1.title"),
+    description: t("section.expertise.expertise1.description"),
+    icon: "tabler:building-community",
+  },
+  {
+    title: t("section.expertise.expertise2.title"),
+    description: t("section.expertise.expertise2.description"),
+    icon: "tabler:sofa",
+  },
+  {
+    title: t("section.expertise.expertise3.title"),
+    description: t("section.expertise.expertise3.description"),
+    icon: "tabler:building-carousel",
+  },
+];
+---
+
+<section class="my-24 lg:mb-48">
+  <Grid client:load featured>
+    <div class="col-span-full lg:col-span-5 lg:mb-0 lg:items-start">
+      <SectionHeader
+        nested
+        title={t("section.expertise.title")}
+        subTitle={t("section.expertise.subtitle")}
+        className="mb-16"
+      />
+    </div>
+    <div class="col-span-full lg:col-span-5 lg:col-start-8 lg:mr-12">
+      <ul class="space-y-24 lg:space-y-16">
+        {
+          features.map((feature) => (
+            <li>
+              <H3 className="relative mb-6 font-semibold lg:mb-8" as="h2">
+                <span class="mb-4 block lg:absolute lg:-left-16 lg:mb-0">
+                  <Icon
+                    name={feature.icon}
+                    class="h-12 w-12"
+                    optimize={false}
+                  />
+                </span>
+                {feature.title}
+              </H3>
+              <p class="text-secondary prose prose-light max-w-full text-lg dark:prose-dark">
+                {feature.description}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <ArrowLink client:load href="/projects" className="mt-20">
+        {t("section.expertise.cta")}
+      </ArrowLink>
+    </div>
+  </Grid>
+</section>

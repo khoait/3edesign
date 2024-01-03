@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "contact": "Liên Hệ",
+    "projects": "Dự Án"
+  },
+  "footer":{
+    "projects": "Dự Án",
+    "expertise": "Chuyên Môn",
+    "company": "Công Ty",
+    "apartments": "Căn Hộ",
+    "houses": "Nhà Phố",
+    "shops": "Cửa Hàng",
+    "architecture": "Kiến Trúc",
+    "interior": "Nội Thất",
+    "landscape": "Cảnh Quan",
+    "about": "Giới Thiệu",
+    "contact": "Liên Hệ",
+    "career": "Tuyển Dụng"
+  },
+  "section":{
+    "contact": {
+      "title": "Liên lạc với chúng tôi.",
+      "subTitle": "Cần tư vấn hoặc thảo luận thêm?",
+      "cta": "Đi đến Liên hệ",
+      "callNow": "Gọi ngay",
+      "sendEmail": "Gửi email"
+    },
+    "relatedProjects":{
+      "title": "Nếu bạn thích dự án này.",
+      "subTitle": "Bạn cũng sẽ thích các dự án dưới đây.",
+      "cta": "Xem tất cả dự án"
+    },
+    "categoryList":{
+      "title": "Các dự án trong hạng mục"
+    }
+  },
+  "label":{
+    "backToProjects": "Quay lại danh sách dự án",
+    "category": "Hạng mục",
+    "location": "Vị trí",
+    "area": "Diện tích"
+  },
+  "notFound404":{
+    "title": "404 - Bạn đã tìm thấy một trang không hoàn chỉnh.",
+    "subtitle": "Trang bạn đang tìm không tồn tại hoặc đã được gỡ xuống.",
+    "cta": "Trở về trang chủ"
+  },
+  "slogan": "Love where you live",
+  "siteTitle": "3E Design - Kiến trúc, Nội thất, Cảnh quan",
+  "siteDescription": "3E Design là đội ngũ kiến trúc sư đam mê các thiết kế xanh, bền vững và hiện đại.",
+  "phone": "097 263 95 04",
+  "address": {
+    "line1": "Phạm Văn Hai",    
+    "line2": "Phường 5",
+    "line3": "Quận Tân Bình",
+    "line4": "Thành phố Hồ Chí Minh",
+    "line5": "Việt Nam"
+  },
+  "copyright": "Bản quyền thuộc"
+}

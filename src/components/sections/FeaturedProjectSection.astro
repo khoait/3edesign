@@ -1,0 +1,61 @@
+---
+import { Grid } from "@components/Grid";
+import { H2, H6 } from "@components/typography";
+import { ArrowLink } from "@components/widgets/arrow-link";
+import { l } from "astro-i18n";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  caption?: string;
+  cta?: string;
+  project: CollectionEntry<"projects">;
+}
+
+const { caption, cta, project } = Astro.props;
+const projectUrl = `/projects/${project.slug}`;
+---
+
+<div class="w-full px-8 lg:px-0">
+  <div
+    class="rounded-lg bg-gray-100 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent">
+    <div class="-mx-8 lg:mx-0">
+      <Grid
+        className="group rounded-lg pb-6 pt-14 md:pb-12 lg:bg-gray-100 lg:dark:bg-gray-800">
+        <div
+          class="col-span-full lg:col-span-5 lg:col-start-2 lg:flex lg:flex-col lg:justify-between">
+          <div>
+            <H6 as="h2">{caption}</H6>
+            <H2 as="h3" className="mt-12">
+              {project.data.title}
+            </H2>
+
+            <div
+              class="mt-6 text-xl font-medium text-gray-400 dark:text-blueGray-500">
+              {project.data.description}
+            </div>
+          </div>
+
+          <div class="mt-12 flex items-center justify-between">
+            <ArrowLink client:load href={l(projectUrl)}>
+              {cta}
+              <div
+                class="focus-ring absolute inset-0 left-0 right-0 z-10 rounded-lg md:-left-12 md:-right-12 lg:left-0 lg:right-0">
+              </div>
+            </ArrowLink>
+          </div>
+        </div>
+
+        <div class="relative col-span-full mt-12 lg:col-span-4 lg:col-start-8">
+          <div class="relative aspect-[4/3] lg:aspect-[4/5]">
+            <Image
+              src={project.data.image}
+              alt={project.data.title}
+              class="h-full w-full rounded-lg object-cover object-center"
+            />
+          </div>
+        </div>
+      </Grid>
+    </div>
+  </div>
+</div>

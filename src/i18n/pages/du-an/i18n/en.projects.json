@@ -1,0 +1,20 @@
+{
+  "page":{
+    "title": "Projects",
+    "description": "Browse our highlighted projects and get in contact to start planning your dream home."
+  },
+  "section":{
+    "hero": {
+      "title": "Get Inpired.",
+      "subTitle": "Browse our highlighted projects and get in contact to start planning your dream home.",
+      "cta": ""      
+    },
+    "categoryList":{
+      "title": "View projects by categories"
+    },
+    "featuredProject": {
+      "title": "Featured project",
+      "cta": "Discover more"
+    }
+  }
+}

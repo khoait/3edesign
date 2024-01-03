@@ -1,0 +1,95 @@
+---
+import { l, t } from "astro-i18n";
+import { Image } from "astro:assets";
+import Mail from "../../assets/images/mail-dark.png";
+import MailDark from "../../assets/images/mail.png";
+import Phone from "../../assets/images/phone-dark.png";
+import PhoneDark from "../../assets/images/phone.png";
+import { Grid } from "../Grid";
+import { ActionCard } from "../widgets/ActionCard";
+import SectionHeader from "../widgets/SectionHeader.astro";
+
+interface Props {
+  sectionHeaderVisible?: boolean;
+  actionCardsVisible?: boolean;
+}
+
+const { sectionHeaderVisible = true, actionCardsVisible = true } = Astro.props;
+---
+
+<Grid className="mb-24 lg:mb-48" as="section">
+  {
+    sectionHeaderVisible ? (
+      <div class="col-span-full">
+        <SectionHeader
+          nested
+          title={t("section.contact.title")}
+          subTitle={t("section.contact.subTitle")}
+          cta={t("section.contact.cta")}
+          ctaUrl={l("/contact")}
+          className="mb-16"
+        />
+      </div>
+    ) : null
+  }
+
+  {
+    actionCardsVisible ? (
+      <>
+        <div class="col-span-full lg:col-span-6">
+          <ActionCard
+            client:only="react"
+            title="Phone"
+            description={t("phone")}
+            cta={t("section.contact.callNow")}
+            ctaUrl="tel:+84972639504">
+            <Image
+              slot="image"
+              src={Phone}
+              class="h-32 w-auto object-contain"
+              widths={[128, 256, 384]}
+              sizes="8rem"
+              alt=""
+            />
+            <Image
+              slot="imageDark"
+              src={PhoneDark}
+              class="h-32 w-auto object-contain"
+              widths={[128, 256, 384]}
+              sizes="8rem"
+              alt=""
+            />
+          </ActionCard>
+        </div>
+        <div class="col-span-full mt-12 lg:col-span-6 lg:mt-0">
+          <ActionCard
+            client:only="react"
+            title="Email"
+            cta={t("section.contact.sendEmail")}
+            ctaUrl="mailto:nhnkhanh.3edesign@gmail.com">
+            <Fragment slot="description">
+              <span>nhnkhanh.3edesign</span>
+              <span>@gmail.com</span>
+            </Fragment>
+            <Image
+              slot="image"
+              src={Mail}
+              class="h-32 w-auto object-contain"
+              widths={[128, 256, 384]}
+              sizes="8rem"
+              alt=""
+            />
+            <Image
+              slot="imageDark"
+              src={MailDark}
+              class="h-32 w-auto object-contain"
+              widths={[128, 256, 384]}
+              sizes="8rem"
+              alt=""
+            />
+          </ActionCard>
+        </div>
+      </>
+    ) : null
+  }
+</Grid>

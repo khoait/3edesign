@@ -1,0 +1,20 @@
+---
+import { H1, H2 } from "@components/typography";
+import { ArrowLink } from "@components/widgets/arrow-link";
+import { l, t } from "astro-i18n";
+import { Grid } from "../Grid";
+---
+
+<Grid client:load className="py-14 md:py-24 lg:pb-40 lg:pt-36" as="section">
+  <div class="col-span-full lg:col-span-5">
+    <H1 className="mb-4 lg:mb-0">{t("section.introduction.title")}</H1>
+  </div>
+  <div class="col-span-full lg:col-span-5 lg:col-start-7">
+    <H2 variant="secondary" as="p">
+      {t("section.introduction.subtitle")}
+    </H2>
+    <ArrowLink client:load href={l("/about")} className="mt-20">
+      {t("section.introduction.cta")}
+    </ArrowLink>
+  </div>
+</Grid>

@@ -1,0 +1,73 @@
+{
+  "section": {
+    "hero": {
+      "slide1": {
+        "title": "Great homes begin with great relationships.",
+        "subtitle": "Throughout the design process, we collaborate with you to gain an understanding of your unique needs."
+      },
+      "slide2": {
+        "title": "New way of living.",
+        "subtitle": "Change the way you live life, closer to nature. To love where you live."
+      },
+      "slide3": {
+        "title": "Efficient journey from start to finish.",
+        "subtitle": "We are committed to providing you with a seamless experience from start to finish."
+      }
+    },
+    "introduction": {
+      "title": "Driven by Design.",
+      "subtitle": "3E Design is a group of architects, designers and engineers committed to sustainable, innovative and practical residential architecture.",
+      "cta": "Learn more about 3E Design"
+    },
+    "projects": {
+      "title": "Get Inspired.",
+      "subtitle": "Browse our highlighted projects to see how we can help you create your dream home."
+    },
+    "expertise": {
+      "title": "What we do.",
+      "subtitle": "We create spaces for you that resonate.",
+      "cta": "See what we are working on",
+      "expertise1": {
+        "title": "Architecture",
+        "description": "We design architecture that is both functional and beautiful. We work with you to create a space that is unique to you and your needs."
+      },
+      "expertise2": {
+        "title": "Interior",
+        "description": "We create interiors with style, unconventional and authentic."
+      },
+      "expertise3": {
+        "title": "Landscape",
+        "description": "We provide landscape design with a process of shaping the land to create a beautiful and functional space."
+      }
+    },
+    "feature":{
+      "title": "Not sure what to expect?",
+      "subtitle": "Here are some features for you at a glance.", 
+      "cta": "About us",
+      "feature1": {
+        "title": "Work with heart",
+        "description": "We are passionate about what we do and we are committed to our clients."
+      },
+      "feature2": {
+        "title": "Professional team",
+        "description": "Working as an independent creative in close collaboration with a dedicated set-up team."
+      },
+      "feature3": {
+        "title": "Taylored to you",
+        "description": "Designing is not looking at your neighbor. We are all unique people and we need unique spaces."
+      },
+      "feature4": {
+        "title": "Fast Process",
+        "description": "Fast and efficient process from the first contact to the final delivery of the project."
+      },
+      "feature5": {
+        "title": "Stay on track",
+        "description": "Deliver on time and on budget. We are committed to our clients and we are always on time."
+      },
+      "feature6": {
+        "title": "Happy clients",
+        "description": "We put our clients first and we are always happy to see them happy."
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "page":{
+    "title": "About 3E Design",
+    "description": "We are a team of professionals passionate about strong, sustainable concepts and their implementation."
+  },
+  "section":{
+    "hero": {
+      "title": "Welcome to 3E Design.",
+      "subTitle": "We are a team of professionals passionate about strong, sustainable concepts and their implementation.",
+      "cta": "Get to know more about us"
+    },
+    "story": {
+      "title": "How we got we where are now.",
+      "subTitle": "In the new era of development in Vietnam, we are witnessing a constantly changing society. Every Vietnamese citizen is immersing himself in the progressive civilization of the region and the world. People's material and spiritual lives are constantly improving. Each of us wants to own our own dream home.",
+      "p1": "Faced with that need, 3E Design was established by Mr.Nguyen Huu Nguyen Khanh and colleagues. With the ability to create links between an individual's creativity and a unified intellectual operating environment of a team of experts with good quality and expertise. We believe that is our company's competitive advantage. Along with that is a dynamic, creative and constantly innovative working style in design thinking, with a high sense of responsibility to meet the highest requirements of customers.",
+      "p2": "A beautiful building can come from an eye-catching shape through many different architectural styles. However, that would be meaningless if it cannot ensure the needs of each individual living in the puzzle. That is what all of our company's experts always strive for in each project to optimize the intended use while still ensuring the aesthetic appearance of the project.",
+      "p3": "With the desire of ambitious hearts among people who have been trained for many years in the field of interior architectural design and construction to serve a single purpose, which is to bring customers the best services. The process is not only good in function but also beautiful in form. We hope we can contribute our efforts to make your dream home come true."
+    },
+    "values":{
+      "title": "Our core values.",
+      "subTitle": "Chúng tôi luôn đặt giá trị của khách hàng lên hàng đầu.",
+      "value1": {
+        "title": "Architecture",
+        "description": "Our core values center on creating structures that are not only aesthetically pleasing but also innovative and sustainable. Holistic integration of form and function is paramount, ensuring that the built environment not only stands as a visual marvel but also serves as a practical and efficient space for its occupants."
+      },
+      "value2": {
+        "title": "Interior",
+        "description": "Our values revolve around the creation of human-centric spaces that prioritize the well-being and comfort of the occupants. Functionality, ergonomics, and aesthetics are seamlessly woven together to craft interiors that not only meet practical needs but also contribute positively to the mental and emotional well-being of individuals."
+      },
+      "value3": {
+        "title": "Landscape",
+        "description": "Our values emphasize the integration of built structures with the surrounding natural environment. Contextual design takes into account the local climate, ecology, and cultural context, ensuring a seamless and harmonious transition between indoor and outdoor spaces."
+      }
+    },
+    "projects":{
+      "title": "Wide range of projects.",
+      "subTitle": "We have been involved in many projects of all sizes across the country.",
+      "cta": "View projects"
+    },
+    "social":{
+      "title": "Connect with us.",
+      "subTitle": "We always update our latest projects on social media. Follow us to stay up to date!",
+      "cta": "Follow us on Facebook"
+    }
+  }  
+}

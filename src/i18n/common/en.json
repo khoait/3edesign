@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "projects": "Projects"    
+  },
+  "footer":{
+    "projects": "Projects",
+    "expertise": "Expertise",
+    "company": "Company",
+    "apartments": "Apartments",
+    "houses": "Houses",
+    "shops": "Shops",
+    "architecture": "Architecture",
+    "interior": "Interior",
+    "landscape": "Landscape",
+    "about": "About",
+    "contact": "Contact",
+    "career": "Career"
+  },
+  "section":{
+    "contact": {
+      "title": "Get in touch.",
+      "subTitle": "Got a question or just want to talk?",
+      "cta": "Contact us",
+      "callNow": "Call now",
+      "sendEmail": "Send email"
+    },
+    "relatedProjects":{
+      "title": "If you found this project helpful",
+      "subTitle": "You will love these ones as well.",
+      "cta": "See all projects"
+    },
+    "categoryList":{
+      "title": "Projects Tagged"
+    }
+  },
+  "label":{
+    "backToProjects": "Back to projects",
+    "category": "Category",
+    "location": "Location",
+    "area": "Total area"
+  },
+  "notFound404":{
+    "title": "404 - Oh no, you found a page that's missing stuff.",
+    "subtitle": "The page you are looking for doesn't exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "slogan": "Love where you live",
+  "siteTitle": "3E Design - Architecture, Interior, Landscape",
+  "siteDescription": "3E Design is a group of architects, designers and engineers committed to sustainable, innovative and practical residential architecture. We passionate about strong, sustainable concepts and their implementation.",
+  "phone": "+84 97 263 95 04",
+  "address": {
+    "line1": "202/15/2/1 Pham Van Hai",
+    "line2": "Ward 5",
+    "line3": "Tan Binh District",
+    "line4": "Ho Chi Minh City",
+    "line5": "Vietnam"
+  },
+  "copyright": "All rights reserved"
+}

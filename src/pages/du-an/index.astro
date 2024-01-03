@@ -1,0 +1,62 @@
+---
+import ContactSection from "@components/sections/ContactSection.astro";
+import FeaturedProjectSection from "@components/sections/FeaturedProjectSection.astro";
+import PageHeroSection from "@components/sections/PageHeroSection.astro";
+import CategoryList from "@components/widgets/CategoryList.astro";
+import ProjectList from "@components/widgets/ProjectList.astro";
+import pageImage from "@images/about.jpg";
+import Layout from "@layouts/PageLayout.astro";
+import { t } from "astro-i18n";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const sortedProjects = projects.toSorted(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+);
+const featuredProject = sortedProjects.find((project) => project.data.featured);
+const otherProjects = sortedProjects.filter(
+  (project) => !project.data.featured,
+);
+const allCategories = projects.flatMap((project) => project.data.categories);
+const categories = [...new Set(allCategories)];
+---
+
+<Layout
+  title={t("page.title")}
+  description={t("page.description")}
+  image={pageImage.src}>
+  <PageHeroSection
+    title={t("section.hero.title")}
+    subtitle={t("section.hero.subTitle")}>
+    <Image
+      slot="rightContent"
+      src={pageImage}
+      class="max-h-75vh h-auto w-full rounded-lg object-contain"
+      widths={[256, 550, 700, 900, 1300, 1800]}
+      sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1279px) 50vw, (min-width: 1280px) 900px"
+      alt=""
+    />
+  </PageHeroSection>
+
+  <CategoryList
+    categories={categories}
+    title={t("section.categoryList.title")}
+  />
+
+  {
+    featuredProject ? (
+      <div class="mb-10">
+        <FeaturedProjectSection
+          project={featuredProject}
+          caption={t("section.featuredProject.title")}
+          cta={t("section.featuredProject.cta")}
+        />
+      </div>
+    ) : null
+  }
+
+  <ProjectList projects={otherProjects} />
+
+  <ContactSection actionCardsVisible={false} />
+</Layout>

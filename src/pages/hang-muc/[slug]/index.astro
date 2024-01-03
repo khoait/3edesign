@@ -1,0 +1,60 @@
+---
+import { Grid } from "@components/Grid";
+import ContactSection from "@components/sections/ContactSection.astro";
+import CategoryList from "@components/widgets/CategoryList.astro";
+import ProjectList from "@components/widgets/ProjectList.astro";
+import { BackLink } from "@components/widgets/arrow-link";
+import Layout from "@layouts/PageLayout.astro";
+import { createGetStaticPaths, l, t } from "astro-i18n";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { toNonAccentString } from "~/i18n/utils";
+
+export const getStaticPaths = createGetStaticPaths(async () => {
+  const projects = await getCollection("projects");
+  const allCategories = projects.flatMap((project) => project.data.categories);
+  const categories = [...new Set(allCategories)];
+
+  const paths = categories.map((category) => {
+    const projectsByCategory = projects.filter((project) =>
+      project.data.categories.includes(category),
+    );
+
+    const categorySlug = toNonAccentString(category);
+    return {
+      params: { slug: categorySlug },
+      props: {
+        category,
+        projects: projectsByCategory,
+      },
+    };
+  });
+
+  return paths;
+});
+
+type Props = {
+  category: string;
+  projects: CollectionEntry<"projects">[];
+};
+
+const { category, projects } = Astro.props;
+---
+
+<Layout title={category}>
+  <Grid client:load className="mb-10 mt-24 lg:mb-24">
+    <div class="col-span-full flex justify-between">
+      <BackLink client:load href={l("/projects")}>
+        {t("label.backToProjects")}
+      </BackLink>
+    </div>
+  </Grid>
+
+  <CategoryList
+    categories={[category]}
+    title={t("section.categoryList.title")}
+  />
+
+  <ProjectList projects={projects} />
+
+  <ContactSection actionCardsVisible={false} />
+</Layout>

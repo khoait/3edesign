@@ -1,0 +1,63 @@
+---
+import { l, t } from "astro-i18n";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project?: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+
+if (!project) {
+  return undefined;
+}
+---
+
+<div
+  class="relative z-20 flex h-full w-full flex-col justify-end gap-4 bg-cover bg-center p-8 md:gap-10">
+  <a
+    href={l(`/projects/${project.slug}`)}
+    class="line-clamp-1 font-serif text-3xl text-white"
+    >{project.data.title}
+    <div
+      class="absolute inset-0 left-0 right-0 z-10 rounded-lg md:-left-12 md:-right-12 lg:left-0 lg:right-0">
+    </div>
+  </a>
+  <p class="line-clamp-3 text-lg text-white">{project.data.description}</p>
+  <div class="flex flex-nowrap justify-between gap-2">
+    <div class="flex flex-col">
+      <span class="text-xs font-semibold uppercase text-white"
+        >{t("label.category")}</span
+      >
+      <span class="text-white">{project.data.categories.at(0)}</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-xs font-semibold uppercase text-white"
+        >{t("label.location")}</span
+      >
+      <span class="text-white">{project.data.location}</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-xs font-semibold uppercase text-white"
+        >{t("label.area")}</span
+      >
+      <span class="text-white">{project.data.area} m<sup>2</sup></span>
+    </div>
+  </div>
+</div>
+<span
+  class="absolute bottom-0 left-0 z-10 h-1/2 w-full bg-gradient-to-b from-transparent to-black/50"
+></span>
+
+<div
+  class="absolute -left-64 top-0 h-full w-[1000px] select-none overflow-hidden border-none object-cover md:-left-2/3 md:w-[850px]"
+  data-swiper-parallax="25%">
+  <Image
+    src={project.data.image}
+    class="h-full w-full select-none border-none object-cover"
+    widths={[300, 500, 850]}
+    sizes={"(max-width: 767px) 100vw, 850px"}
+    alt={`Picture of ${project.data.title}`}
+  />
+</div>

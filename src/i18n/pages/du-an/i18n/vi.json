@@ -1,0 +1,20 @@
+{
+  "page":{
+    "title": "Dự án",
+    "description": "Xem qua các dự án nổi bật của chúng tôi và liên hệ để bắt đầu lên kế hoạch cho ngôi nhà mơ ước của bạn."
+  },
+  "section":{
+    "hero": {
+      "title": "Lấy cảm hứng.",
+      "subTitle": "Xem qua các dự án nổi bật của chúng tôi và liên hệ để bắt đầu lên kế hoạch cho ngôi nhà mơ ước của bạn.",
+      "cta": ""      
+    },
+    "categoryList":{
+      "title": "Hạng mục các dự án"
+    },    
+    "featuredProject": {
+      "title": "Dự án nổi bật",
+      "cta": "Xem thêm"
+    }
+  }
+}

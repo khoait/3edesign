@@ -1,0 +1,10 @@
+{
+  "backToProjects": "Back to projects",
+  "section":{
+    "relatedProjects":{
+      "title": "If you found this project helpful",
+      "subTitle": "You will love these ones as well.",
+      "cta": "See all projects"
+    }
+  }
+}

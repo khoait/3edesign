@@ -1,0 +1,30 @@
+---
+import ContactSection from "@components/sections/ContactSection.astro";
+import PageHeroSection from "@components/sections/PageHeroSection.astro";
+import Map from "@components/widgets/Map";
+import Layout from "@layouts/PageLayout.astro";
+import { t } from "astro-i18n";
+---
+
+<Layout title={t("page.title")} description={t("page.description")}>
+  <PageHeroSection
+    title={t("section.hero.title")}
+    subtitle={t("section.hero.subTitle")}>
+    <div slot="description" class="mt-24 flex flex-col gap-4">
+      <address
+        class="text-secondary prose prose-light text-lg not-italic dark:prose-dark">
+        <span class="text-xl font-bold">3E Design</span><br />
+        {t("address.line1")},<br />
+        {t("address.line2")},<br />
+        {t("address.line3")},<br />
+        {t("address.line4")},<br />
+        {t("address.line5")}<br />
+      </address>
+    </div>
+    <div slot="rightContent" class="h-full w-full">
+      <Map client:only="react" />
+    </div>
+  </PageHeroSection>
+  <div class="h-24"></div>
+  <ContactSection sectionHeaderVisible={false} />
+</Layout>

@@ -1,0 +1,73 @@
+---
+import { l, t } from "astro-i18n";
+import { Icon } from "astro-icon";
+import { Grid } from "../Grid";
+import { FeatureCard } from "../widgets/FeatureCard";
+import SectionHeader from "../widgets/SectionHeader.astro";
+
+const features = [
+  {
+    title: t("section.feature.feature1.title"),
+    description: t("section.feature.feature1.description"),
+    icon: "tabler:heart",
+  },
+  {
+    title: t("section.feature.feature2.title"),
+    description: t("section.feature.feature2.description"),
+    icon: "tabler:users",
+  },
+  {
+    title: t("section.feature.feature3.title"),
+    description: t("section.feature.feature3.description"),
+    icon: "tabler:tools",
+  },
+  {
+    title: t("section.feature.feature4.title"),
+    description: t("section.feature.feature4.description"),
+    icon: "tabler:rocket",
+  },
+  {
+    title: t("section.feature.feature5.title"),
+    description: t("section.feature.feature5.description"),
+    icon: "tabler:calendar-time",
+  },
+  {
+    title: t("section.feature.feature6.title"),
+    description: t("section.feature.feature6.description"),
+    icon: "tabler:mood-smile",
+  },
+];
+---
+
+<Grid className="mb-24 lg:mb-48" as="section">
+  <div class="col-span-full">
+    <SectionHeader
+      nested
+      title={t("section.feature.title")}
+      subTitle={t("section.feature.subtitle")}
+      className="mb-16"
+      cta={t("section.feature.cta")}
+      ctaUrl={l("/about")}
+    />
+  </div>
+  <div class="col-span-full">
+    <Grid rowGap nested>
+      {
+        features.map((feature) => (
+          <div class="col-span-full lg:col-span-4">
+            <FeatureCard
+              title={feature.title}
+              description={feature.description}>
+              <Icon
+                slot="icon"
+                name={feature.icon}
+                class="h-12 w-12"
+                optimize={false}
+              />
+            </FeatureCard>
+          </div>
+        ))
+      }
+    </Grid>
+  </div>
+</Grid>

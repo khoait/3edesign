@@ -1,0 +1,27 @@
+---
+import PageHeroSection from "@components/sections/PageHeroSection.astro";
+import Slide1 from "@images/slides/slide1.jpg";
+import Layout from "@layouts/PageLayout.astro";
+import { t } from "astro-i18n";
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title={t("page.title")}
+  description={t("page.description")}
+  image={Slide1.src}>
+  <PageHeroSection
+    title={t("section.hero.title")}
+    subtitle={t("section.hero.subTitle")}
+    arrowUrl="#about"
+    arrowLabel={t("section.hero.cta")}>
+    <Image
+      slot="rightContent"
+      src={Slide1}
+      class="max-h-75vh h-auto w-full rounded-lg object-contain"
+      widths={[256, 550, 700, 900, 1300, 1800]}
+      sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1279px) 50vw, (min-width: 1280px) 900px"
+      alt=""
+    />
+  </PageHeroSection>
+</Layout>

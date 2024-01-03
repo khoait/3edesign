@@ -1,0 +1,44 @@
+---
+import { HeroCarousel } from "@components/widgets/HeroCarousel";
+import HeroCarouselItem from "@components/widgets/HeroCarouselItem.astro";
+import { t } from "astro-i18n";
+
+const SLIDES = [
+  {
+    id: "slide1",
+    title: t("section.hero.slide1.title"),
+    subtitle: t("section.hero.slide1.subtitle"),
+  },
+  {
+    id: "slide2",
+    title: t("section.hero.slide2.title"),
+    subtitle: t("section.hero.slide2.subtitle"),
+  },
+  {
+    id: "slide3",
+    title: t("section.hero.slide3.title"),
+    subtitle: t("section.hero.slide3.subtitle"),
+  },
+];
+---
+
+<HeroCarousel client:load>
+  <HeroCarouselItem
+    slot={SLIDES[0].id}
+    title={SLIDES[0].title}
+    subtitle={SLIDES[0].subtitle}
+    imagePath="/src/assets/images/slides/slide1.jpg"
+  />
+  <HeroCarouselItem
+    slot={SLIDES[1].id}
+    title={SLIDES[1].title}
+    subtitle={SLIDES[1].subtitle}
+    imagePath="/src/assets/images/slides/slide2.jpg"
+  />
+  <HeroCarouselItem
+    slot={SLIDES[2].id}
+    title={SLIDES[2].title}
+    subtitle={SLIDES[2].subtitle}
+    imagePath="/src/assets/images/slides/slide3.jpg"
+  />
+</HeroCarousel>

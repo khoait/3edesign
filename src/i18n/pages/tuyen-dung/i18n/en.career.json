@@ -1,0 +1,13 @@
+{
+  "page":{
+    "title": "Career",
+    "description": "We are looking for talented people to join our team."
+  },
+  "section":{
+    "hero": {
+      "title": "Join our team",
+      "subTitle": "We are looking for talented people to join our team.",
+      "cta": "See open positions"      
+    }
+  }
+}

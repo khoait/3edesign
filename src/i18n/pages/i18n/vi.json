@@ -1,0 +1,73 @@
+{
+  "section": {
+    "hero": {
+      "slide1": {
+        "title": "Nhà đẹp còn được xây từ những mối quan hệ đẹp.",
+        "subtitle": "Thông qua quy trình thiết kế, chúng tôi luôn hợp tác cùng bạn nhằm nắm bắt nhu cầu cụ thể của bạn."
+      },
+      "slide2": {
+        "title": "Phong cách sống mới.",
+        "subtitle": "Change the way you live life, closer to nature. To love where you live."
+      },
+      "slide3": {
+        "title": "Efficient journey from start to finish.",
+        "subtitle": "We are committed to providing you with a seamless experience from start to finish."
+      }
+    },
+    "introduction": {
+      "title": "Thúc đẩy bởi thiết kế.",
+      "subtitle": "Chúng tôi là đội ngũ kiến trúc sư đam mê các thiết kế xanh, bền vững và hiện đại.",
+      "cta": "Tìm hiểu thêm về 3E Design"
+    },
+    "projects": {
+      "title": "Tạo cảm hứng.",
+      "subtitle": "Xem qua các dự án nổi bật của chúng tôi và liên hệ để bắt đầu lên kế hoạch cho ngôi nhà mơ ước của bạn."
+    },
+    "expertise": {
+      "title": "Chuyên môn của chúng tôi.",
+      "subtitle": "Chúng tôi tạo ra không gian dành riêng cho bạn.",
+      "cta": "Xem những dữ án chúng tối đã thi công",
+      "expertise1": {
+        "title": "Kiến trúc",
+        "description": "Chúng tôi thiết kế kiến trúc tích hợp hài hòa thẩm mỹ và công năng. Chúng tôi làm việc cùng bạn để tạo ra một không gian dành riêng cho bạn và nhu cầu của bạn."
+      },
+      "expertise2": {
+        "title": "Nội thất",
+        "description": "Chúng tôi tạo ra nội thất với phong cách, độc đáo và chân thực."
+      },
+      "expertise3": {
+        "title": "Cảnh quan",
+        "description": "Chúng tôi cung cấp thiết kế cảnh quan với quy trình định hình khu đất để tạo ra một không gian đẹp và tiện dụng."
+      }
+    },
+    "feature":{
+      "title": "Những gì bạn mong đợi?",
+      "subtitle": "Đây là các quyền lợi dành riêng cho bạn.", 
+      "cta": "Về chúng tôi",
+      "feature1": {
+        "title": "Sự tận tâm",
+        "description": "Chúng tôi đam mê những gì chúng tôi làm và hết lòng với khách hàng."
+      },
+      "feature2": {
+        "title": "Đội ngũ chuyên nghiệp",
+        "description": "Chúng tôi làm việc sáng tạo một cách độc lập trong sự cộng tác chặt chẽ với nhau và với khách hàng."
+      },
+      "feature3": {
+        "title": "Thiết kế dành riêng",
+        "description": "Thiết kế không phải là copy từ hàng xóm. Mỗi cá nhân là duy nhất và cần những không gian độc đáo riêng."
+      },
+      "feature4": {
+        "title": "Quy trình hiệu quả",
+        "description": "Quy trình nhanh chóng và hiệu quả từ lần liên hệ đầu tiên cho đến khi bàn giao công trình."
+      },
+      "feature5": {
+        "title": "Đúng tiến độ",
+        "description": "Bàn giao đúng tiến độ và đúng ngân sách. Chúng tôi luôn cam kết tiến độ với khách hàng."
+      },
+      "feature6": {
+        "title": "Vui lòng khách đến, vừa lòng khách đi",
+        "description": "Chúng tôi đặt khách hàng lên hàng đầu và chúng tôi chỉ hài lòng khi khách hàng hài lòng."
+      }
+    }
+  }
+}

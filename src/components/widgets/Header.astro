@@ -1,0 +1,61 @@
+---
+import ThemeToggle from "@components/core/ThemeToggle.astro";
+import { l, t } from "astro-i18n";
+import ToggleMenu from "../core/ToggleMenu.astro";
+import Logo from "./Logo.astro";
+import MobileMenu from "./MobileMenu.astro";
+---
+
+<div class="px-5vw py-8 lg:py-12">
+  <nav
+    class="text-primary mx-auto flex max-w-8xl flex-wrap items-center justify-between">
+    <div>
+      <a
+        class="block whitespace-nowrap text-2xl font-medium text-black focus:outline-none dark:text-white"
+        href={l("/")}>
+        <!-- <img src={Logo} alt="3E Design Logo" class="h-24 w-auto" /> -->
+        <Logo />
+      </a>
+    </div>
+
+    <ul class="hidden items-center md:flex">
+      <li class="px-5 py-2">
+        <a
+          class="underlined hover:text-primary focus:text-primary text-secondary block whitespace-nowrap text-lg font-medium focus:outline-none"
+          href={l("/")}>{t("nav.home")}</a
+        >
+      </li>
+      <li class="px-5 py-2">
+        <a
+          class="underlined hover:text-primary focus:text-primary text-secondary block whitespace-nowrap text-lg font-medium focus:outline-none"
+          href={l("/projects")}>{t("nav.projects")}</a
+        >
+      </li>
+      <li class="px-5 py-2">
+        <a
+          class="underlined hover:text-primary focus:text-primary text-secondary block whitespace-nowrap text-lg font-medium focus:outline-none"
+          href={l("/about")}>{t("nav.about")}</a
+        >
+      </li>
+      <li class="px-5 py-2">
+        <a
+          class="underlined hover:text-primary focus:text-primary text-secondary block whitespace-nowrap text-lg font-medium focus:outline-none"
+          href={l("/contact")}>{t("nav.contact")}</a
+        >
+      </li>
+      <li>
+        <!-- <ToggleDarkMode client:load>
+          <Icon slot="moonIcon" name="tabler:moon" optimize={false} />
+          <Icon slot="sunIcon" name="tabler:sun" optimize={false} />
+        </ToggleDarkMode> -->
+        <ThemeToggle />
+      </li>
+    </ul>
+
+    <div class="flex items-center justify-center gap-3 md:hidden">
+      <ThemeToggle />
+      <ToggleMenu />
+    </div>
+  </nav>
+</div>
+<MobileMenu />

@@ -1,0 +1,32 @@
+<script is:inline>
+  (function () {
+    if (typeof window !== "undefined") {
+      const themeKey = "3edesign-theme";
+      const isDarkMode = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem(themeKey)
+        ) {
+          return localStorage.getItem(themeKey) === "dark";
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      })();
+
+      const cl = document.documentElement.classList;
+      const themeAlreadyApplied = cl.contains("light") || cl.contains("dark");
+      if (themeAlreadyApplied) {
+        // this script shouldn't exist if the theme is already applied!
+        console.warn("Theme is already applied");
+      } else {
+        cl.add(isDarkMode ? "dark" : "light");
+
+        document.head.querySelector('meta[name="color-scheme"]').content =
+          isDarkMode ? "dark light" : "light dark";
+
+        document.head
+          .querySelector("meta[name='theme-color']")
+          ?.setAttribute("content", isDarkMode ? "#1F2028" : "#ffffff");
+      }
+    }
+  })();
+</script>

@@ -1,0 +1,40 @@
+---
+import { astroI18n, createGetStaticPaths } from "astro-i18n";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { toNonAccentString } from "~/i18n/utils";
+import Page from "../../../hang-muc/[slug]/index.astro";
+export const prerender = false;
+
+export const getStaticPaths = createGetStaticPaths(async () => {
+  const projects = await getCollection("projects");
+  const allCategories = projects.flatMap((project) => project.data.categories);
+  const categories = [...new Set(allCategories)];
+
+  const paths = categories.map((category) => {
+    const projectsByCategory = projects.filter((project) =>
+      project.data.categories.includes(category),
+    );
+
+    const categorySlug =
+      astroI18n.locale === "vi" ? toNonAccentString(category) : category;
+    return {
+      params: { slug: categorySlug },
+      props: {
+        category,
+        projects: projectsByCategory,
+      },
+    };
+  });
+
+  return paths;
+});
+
+type Props = {
+  category: string;
+  projects: CollectionEntry<"projects">[];
+};
+
+const { props } = Astro;
+---
+
+<Page {...props} />

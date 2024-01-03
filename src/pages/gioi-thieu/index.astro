@@ -1,0 +1,150 @@
+---
+import { Grid } from "@components/Grid";
+import ContactSection from "@components/sections/ContactSection.astro";
+import PageHeroSection from "@components/sections/PageHeroSection.astro";
+import { H1, H2, H3, H5, Paragraph } from "@components/typography";
+import SectionHeader from "@components/widgets/SectionHeader.astro";
+import { ArrowLink } from "@components/widgets/arrow-link";
+import pageImage from "@images/projects.jpg";
+import Slide2 from "@images/slides/slide2.jpg";
+import Slide3 from "@images/slides/slide3.jpg";
+import Layout from "@layouts/PageLayout.astro";
+import { l, t } from "astro-i18n";
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title={t("page.title")}
+  description={t("page.description")}
+  image={pageImage.src}>
+  <PageHeroSection
+    title={t("section.hero.title")}
+    subtitle={t("section.hero.subTitle")}
+    arrowUrl="#about"
+    arrowLabel={t("section.hero.cta")}>
+    <Image
+      slot="rightContent"
+      src={pageImage}
+      class="max-h-75vh h-auto w-full rounded-lg object-contain"
+      widths={[256, 550, 700, 900, 1300, 1800]}
+      sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1279px) 50vw, (min-width: 1280px) 900px"
+      alt=""
+    />
+  </PageHeroSection>
+
+  <Grid className="mb-24 mt-16 lg:mb-48">
+    <div class="col-span-full mb-12 lg:col-span-4 lg:mb-0">
+      <H1>{t("section.story.title")}</H1>
+    </div>
+    <div class="col-span-full mb-8 lg:col-span-8 lg:mb-20">
+      <H2 className="mb-12" variant="secondary" as="p">
+        {t("section.story.subTitle")}
+      </H2>
+
+      <div class="w-full lg:pr-12">
+        <Image
+          src={Slide2}
+          class="w-full rounded-lg object-cover"
+          widths={[512, 840, 1024, 1680, 2520]}
+          sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1620px) 50vw, 800px"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <Paragraph
+      className="lg:mb:0 col-span-full mb-4 lg:col-span-4 lg:col-start-5 lg:mr-12">
+      {t("section.story.p1")}
+    </Paragraph>
+    <Paragraph className="col-span-full lg:col-span-4 lg:col-start-9 lg:mr-12">
+      {t("section.story.p2")}
+    </Paragraph>
+    <Paragraph className="col-span-full lg:col-span-4 lg:col-start-9 lg:mr-12">
+      {t("section.story.p3")}
+    </Paragraph>
+  </Grid>
+
+  <Grid className="mb-24 lg:mb-64">
+    <div class="col-span-full lg:col-span-6 lg:col-start-7">
+      <div class="mb-12 lg:mb-0">
+        <Image
+          src={Slide3}
+          class="w-full rounded-lg object-cover"
+          widths={[512, 650, 840, 1024, 1300, 1680, 2000, 2520]}
+          sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1620px) 40vw, 650px"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="col-span-full lg:col-span-5 lg:col-start-1 lg:row-start-1">
+      <H1 className="mb-10">{t("section.values.title")}</H1>
+
+      <H5 as="h2" className="mb-4">
+        {t("section.values.value1.title")}
+      </H5>
+      <Paragraph className="mb-12">
+        {t("section.values.value1.description")}
+      </Paragraph>
+      <H5 as="h2" className="mb-4">
+        {t("section.values.value2.title")}
+      </H5>
+      <Paragraph className="mb-12">
+        {t("section.values.value2.description")}
+      </Paragraph>
+      <H5 as="h2" className="mb-4">
+        {t("section.values.value3.title")}
+      </H5>
+      <Paragraph className="mb-12">
+        {t("section.values.value3.description")}
+      </Paragraph>
+    </div>
+  </Grid>
+
+  <SectionHeader
+    className="mb-16"
+    ctaUrl={l("/projects")}
+    cta={t("section.projects.cta")}
+    title={t("section.projects.title")}
+    subTitle={t("section.projects.subTitle")}
+  />
+
+  <Grid className="mb-24 gap-5 lg:mb-64">
+    <div class="col-span-full mb-12 lg:mb-20">
+      <Image
+        src={Slide2}
+        class="w-full rounded-lg object-cover"
+        widths={[280, 560, 840, 1100, 1300, 2600, 3900]}
+        sizes="(min-width:1620px) 1280px, 80vw"
+        alt=""
+      />
+    </div>
+  </Grid>
+
+  <Grid client:load className="mb-24 lg:mb-64">
+    <div class="col-span-full lg:col-span-6 lg:col-start-1">
+      <div class="mb-12 lg:mb-0">
+        <Image
+          src={Slide2}
+          class="w-full rounded-lg object-cover"
+          widths={[280, 560, 840, 1100, 1300, 2600, 3900]}
+          sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1620px) 40vw, 650px"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="col-span-full lg:col-span-4 lg:col-start-8 lg:row-start-1">
+      <H2 className="mb-10 lg:mt-24">
+        {t("section.social.title")}
+      </H2>
+      <H3 variant="secondary" as="p" className="mb-14">
+        {t("section.social.subTitle")}
+      </H3>
+      <ArrowLink client:load href="https://www.facebook.com/3edesign.team">
+        {t("section.social.cta")}
+      </ArrowLink>
+    </div>
+  </Grid>
+  <ContactSection actionCardsVisible={false} />
+</Layout>

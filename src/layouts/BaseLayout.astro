@@ -1,0 +1,37 @@
+---
+import SeoTags from "@components/atoms/SeoTags.astro";
+import BaseHead from "@components/core/BaseHead.astro";
+import BasicScripts from "@components/core/BasicScripts.astro";
+import ThemeProvider from "@components/core/ThemeProvider.astro";
+import logo from "@images/logo.svg";
+import { astroI18n, t } from "astro-i18n";
+import "~/assets/styles/base.css";
+import "~/assets/styles/globals.css";
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = t("siteTitle"),
+  description = t("siteTitle"),
+  image = logo.src,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={astroI18n.locale} class="motion-safe:scroll-smooth">
+  <head>
+    <BaseHead />
+    <meta name="description" content={description} />
+    <SeoTags title={title} description={description} image={image} />
+    <title>{title}</title>
+    <ThemeProvider />
+  </head>
+  <body class="bg-white antialiased transition duration-500 dark:bg-gray-900">
+    <slot />
+    <BasicScripts />
+  </body>
+</html>

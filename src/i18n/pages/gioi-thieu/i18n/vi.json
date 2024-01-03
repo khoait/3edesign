@@ -1,0 +1,46 @@
+{
+  "page":{
+    "title": "Giới thiệu về 3E Design",
+    "description": "Chúng tôi là đội ngũ kiến trúc sư đam mê các thiết kế xanh, bền vững và hiện đại."
+  },
+  "section":{
+    "hero": {
+      "title": "3E Design xin chào.",
+      "subTitle": "Chúng tôi là đội ngũ kiến trúc sư đam mê các thiết kế xanh, bền vững và hiện đại.",
+      "cta": "Tìm hiểu thêm về chúng tôi"      
+    },
+    "story": {
+      "title": "Câu chuyện của chúng tôi",
+      "subTitle": "Trong thời đại phát triển mới ở Việt Nam, chúng ta đang chứng kiến một xã hội biến đổi không ngừng. Mỗi công dân Việt Nam đang hòa mình vào nền văn minh tiến bộ của khu vực và thế giới. Đời sống vật chất và tình thần của người dân không ngừng được nâng cao. Mỗi người trong chúng ta ai cũng đều mong muốn sở hữu riêng cho mình một ngôi nhà mơ ước.",
+      "p1": "Đứng trước nhu cầu đó, Công ty TNHH Tư Vấn Thiết Kế & Xây Dựng 3E được thành lập bởi KTS. Nguyễn Hữu Nguyên Khánh và các cộng sự. Với khả năng tạo ra liên kết giữa sáng tạo của một cá nhân vào một môi trường hoạt động trí tuệ thống nhất của một đội ngũ bao gồm những chuyên gia có năng lực phẩm chất và chuyên môn tốt. Chúng tôi tin tưởng rằng đó chính là lợi thế cạnh tranh của công ty chúng tôi. Cùng với đó là phong cách làm việc năng động, sáng tạo và không ngừng ođỏi mới trong tư duy thiết kế, trên tinh thần trách nhiệm cao nhằm đáp ứng được các yêu cầu cao nhất của khách hàng.",
+      "p2": "Một công trình đẹp có thể đến từ hình thể bắt mắt thông quan nhiều phong cách kiến trúc khác nhau. Tuy nhiên, điều đó sẽ là vô nghĩa nếu không đảm bảo được nhu cầu sử dụng của từng cá thể sống trong đố. Đó là điều mà tất cả các chuyên viên công ty chúng tôi luôn trắn trở trong từng công trình nhằm tối ưu hóa mục đích sử dụng nhưng vẫn đảm bảo hình thức thẩm mỹ của công trình.",
+      "p3": "Với khát khao của những con tim đầy hoài bão trong những con người được tôi luyện nhiều năm trong lĩnh vực thiết kế và thi công kiến trúc nội thất nhằm phục vụ cho một mục đích duy nhất, là đem đến cho Quý Khách hàng những công trình không những tốt về công năng mà còn đẹp về hình thức. Hy vọng chúng tôi có thể góp một công sức của mình để hiện thực hóa ngôi nhà mơ ước của Quý Khách."
+    },
+    "values":{
+      "title": "Giá trị cốt lõi.",
+      "subTitle": "Chúng tôi luôn đặt giá trị của khách hàng lên hàng đầu.",
+      "value1": {
+        "title": "Kiến trúc",
+        "description": "Tạo ra các công trình không chỉ làm đẹp về mặt thẩm mỹ mà còn sáng tạo và bền vững. Sự phối hợp toàn diện giữa nhãn quan và công năng là cốt yếu, đảm bảo rằng công trình không chỉ là một kiệt tác thị giác mà còn phục vụ thực tiễn cách hiệu quả."
+      },
+      "value2": {
+        "title": "Nội thất",
+        "description": "Tạo ra các không gian tập trung vào con người, ưu tiên sức khỏe và thoải mái của người sử dụng. Chức năng, nguyên tắc thiết kế và thẩm mỹ được kết hợp một cách hài hòa để tạo ra các nội thất không chỉ đáp ứng nhu cầu thực tế mà còn đóng góp tích cực vào sức khỏe tinh thần và tâm lý của mọi người."
+      },
+      "value3": {
+        "title": "Cảnh quan",
+        "description": "Nhấn mạnh sự tích hợp giữa các công trình và môi trường tự nhiên xung quanh. Thiết kế ngữ cảnh cân nhắc môi trường địa phương, khí hậu, và bối cảnh văn hóa, đảm bảo một sự chuyển đổi liền mạch và hòa nhã giữa không gian nội-ngoại thất."
+      }
+    },
+    "projects":{
+      "title": "Dự án đa dạng.",
+      "subTitle": "Chúng tôi đã và đang tham gia vào nhiều dự án lớn nhỏ trên khắp cả nước.",
+      "cta": "Xem tất cả"
+    },
+    "social":{
+      "title": "Kết nối với chúng tôi trên mạng xã hội.",
+      "subTitle": "Chúng tôi luôn cập nhật những dự án mới nhất của mình trên mạng xã hội. Hãy theo dõi chúng tôi để cập nhật những dự án và thông tin mới nhất.",
+      "cta": "Theo dõi chúng tôi trên Facebook"
+    }    
+  }
+}

@@ -1,0 +1,38 @@
+---
+import { H4 } from "@components/typography";
+import { l } from "astro-i18n";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  project: CollectionEntry<"projects">;
+};
+
+const { project } = Astro.props;
+const projectUrl = `/projects/${project.slug}`;
+---
+
+<div class="relative w-full">
+  <a
+    class="group peer relative block w-full focus:outline-none"
+    href={l(projectUrl)}>
+    <div class="relative aspect-[3/4] rounded-lg">
+      <Image
+        src={project.data.image}
+        alt={project.data.title}
+        class="focus-ring h-full w-full overflow-hidden rounded-lg object-cover object-center transition"
+        widths={[280, 560, 840, 1100, 1300, 1650]}
+        sizes={"(max-width:639px) 80vw, (min-width:640px) and (max-width:1023px) 40vw, (min-width:1024px) and (max-width:1620px) 25vw, 420px"}
+      />
+    </div>
+
+    <div class="mt-8 text-lg font-medium text-gray-400 dark:text-blueGray-500">
+      <span>{project.data.location}</span> - <span
+        >{project.data.area} m<sup>2</sup></span
+      >
+    </div>
+    <H4 as="div" className="mt-4">
+      {project.data.title}
+    </H4>
+  </a>
+</div>

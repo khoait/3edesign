@@ -1,0 +1,48 @@
+---
+import { ProjectCarousel } from "@components/widgets/ProjectCarousel";
+import { t } from "astro-i18n";
+import { getCollection } from "astro:content";
+import { H1, H2 } from "../typography";
+import ProjectCarouselItem from "../widgets/ProjectCarouselItem.astro";
+
+const projects = await getCollection("projects");
+const sortedProjects = projects.toSorted(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+);
+const featuredProjects = sortedProjects.filter(
+  (project) => project.data.featured,
+);
+
+const slide1 = featuredProjects.at(0);
+const slide2 = featuredProjects.at(1);
+const slide3 = featuredProjects.at(2);
+const slide4 = featuredProjects.at(3);
+const slide5 = featuredProjects.at(4);
+const slide6 = featuredProjects.at(5);
+const slide7 = featuredProjects.at(6);
+const slide8 = featuredProjects.at(7);
+const slide9 = featuredProjects.at(8);
+---
+
+<section class="relative py-14 md:py-24 lg:pb-40 lg:pt-36">
+  <div class="relative mx-10vw py-14 md:hidden md:py-24">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 pb-8 pr-8">
+      <H1 className="mb-4 lg:mb-0">{t("section.projects.title")}</H1>
+      <H2 variant="secondary" as="p">
+        {t("section.projects.subtitle")}
+      </H2>
+    </div>
+  </div>
+
+  <ProjectCarousel client:load>
+    <ProjectCarouselItem slot="slide1" project={slide1} />
+    <ProjectCarouselItem slot="slide2" project={slide2} />
+    <ProjectCarouselItem slot="slide3" project={slide3} />
+    <ProjectCarouselItem slot="slide4" project={slide4} />
+    <ProjectCarouselItem slot="slide5" project={slide5} />
+    <ProjectCarouselItem slot="slide6" project={slide6} />
+    <ProjectCarouselItem slot="slide7" project={slide7} />
+    <ProjectCarouselItem slot="slide8" project={slide8} />
+    <ProjectCarouselItem slot="slide9" project={slide9} />
+  </ProjectCarousel>
+</section>

@@ -1,0 +1,199 @@
+---
+import { astroI18n, l, t } from "astro-i18n";
+import { Icon } from "astro-icon";
+import { languages, toNonAccentString } from "../../i18n/utils";
+import Logo from "./Logo.astro";
+
+const params: Record<string, string> = {};
+for (const [key, value] of Object.entries(Astro.params)) {
+  if (value === undefined) continue;
+  params[key] = String(value);
+}
+
+let links = astroI18n.locales.map((locale) => ({
+  locale,
+  href: l(Astro.url.pathname, params, {
+    targetLocale: locale,
+  }),
+  label:
+    (languages as { [key: string]: string })[locale] || locale.toUpperCase(),
+}));
+
+links = links.filter((link) => link.locale !== astroI18n.locale);
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-gray-200 pb-16 pt-48 dark:border-gray-600">
+  <div class="relative mx-10vw">
+    <div class="relative mx-auto max-w-7xl">
+      <div class="flex flex-wrap gap-24">
+        <div class="flex-shrink-1 flex-grow-0">
+          <a
+            class="text-primary block whitespace-nowrap text-2xl font-medium focus:outline-none"
+            href={l("/")}>
+            <Logo />
+          </a>
+          <p class="text-secondary mt-6 max-w-md text-2xl">
+            {t("slogan")}
+          </p>
+          <div
+            class="text-secondary mt-6 flex flex-col items-start justify-between gap-4">
+            <div class="flex gap-4">
+              <a
+                href="https://www.facebook.com/3edesign.team"
+                class="text-primary hover:text-brand focus:text-brand focus:outline-none">
+                <Icon
+                  name="tabler:brand-facebook"
+                  class="inline-block h-10 w-10"
+                  optimize={false}
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/3edesign.team"
+                class="text-primary hover:text-brand focus:text-brand focus:outline-none">
+                <Icon
+                  name="tabler:brand-youtube"
+                  class="inline-block h-10 w-10"
+                  optimize={false}
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/3edesign.team"
+                class="text-primary hover:text-brand focus:text-brand focus:outline-none">
+                <Icon
+                  name="tabler:brand-instagram"
+                  class="inline-block h-10 w-10"
+                  optimize={false}
+                />
+              </a>
+            </div>
+            <div class="mt-4 flex gap-2 align-middle">
+              <Icon
+                name="tabler:mail"
+                class="inline-block h-6 w-6"
+                optimize={false}
+              />
+              <a
+                class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                href="mailto:nhnkhanh.3edesign@gmail.com"
+                >nhnkhanh.3edesign@gmail.com
+              </a>
+            </div>
+            <div class="flex gap-2 align-middle">
+              <Icon
+                name="tabler:phone"
+                class="inline-block h-6 w-6"
+                optimize={false}
+              />
+              <a
+                class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                href="tel:nhnkhanh.3edesign@gmail.com"
+                >{t("phone")}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-wrap justify-between gap-10">
+          <div>
+            <div class="text-lg font-medium text-black dark:text-white">
+              {t("footer.projects")}
+            </div>
+            <ul class="mt-4">
+              <li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l(
+                    `/category/${toNonAccentString(t("footer.apartments"))}`,
+                  )}>{t("footer.apartments")}</a
+                >
+              </li><li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l(`/category/${toNonAccentString(t("footer.houses"))}`)}
+                  >{t("footer.houses")}</a
+                >
+              </li><li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l(`/category/${toNonAccentString(t("footer.shops"))}`)}
+                  >{t("footer.shops")}</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-lg font-medium text-black dark:text-white">
+              {t("footer.expertise")}
+            </div>
+            <ul class="mt-4">
+              <li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l(
+                    `/category/${toNonAccentString(t("footer.architecture"))}`,
+                  )}>{t("footer.architecture")}</a
+                >
+              </li><li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l(
+                    `/category/${toNonAccentString(t("footer.interior"))}`,
+                  )}>{t("footer.interior")}</a
+                >
+              </li><li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l(
+                    `/category/${toNonAccentString(t("footer.landscape"))}`,
+                  )}>{t("footer.landscape")}</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-lg font-medium text-black dark:text-white">
+              {t("footer.company")}
+            </div>
+            <ul class="mt-4">
+              <li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l("/about")}>{t("footer.about")}</a
+                >
+              </li>
+              <li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l("/contact")}>{t("footer.contact")}</a
+                >
+              </li>
+              <li class="py-1">
+                <a
+                  class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                  href={l("/career")}>{t("footer.career")}</a
+                >
+              </li>
+              {
+                links.map((link) => (
+                  <li class="py-1">
+                    <a
+                      class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
+                      href={link.href}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-24 text-lg text-gray-500 md:mt-44 dark:text-blueGray-500">
+        <span>{t("copyright")}</span>
+        <span class="block md:inline">© 3E Design {currentYear}</span>
+      </div>
+    </div>
+  </div>
+</footer>

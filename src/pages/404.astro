@@ -1,0 +1,35 @@
+---
+import PageHeroSection from "@components/sections/PageHeroSection.astro";
+import ZoomDark from "@images/zoom-dark.png";
+import Zoom from "@images/zoom.png";
+import Layout from "@layouts/PageLayout.astro";
+import { l, t } from "astro-i18n";
+import { Image } from "astro:assets";
+---
+
+<Layout title={t("notFound404.title")}>
+  <PageHeroSection
+    title={t("notFound404.title")}
+    subtitle={t("notFound404.subtitle")}
+    arrowLabel={t("notFound404.cta")}
+    arrowUrl={l("/")}
+    arrowDirection="left">
+    <Image
+      slot="rightContent"
+      src={Zoom}
+      class="max-h-75vh light:block h-auto w-full rounded-lg object-contain dark:hidden"
+      widths={[256, 550, 700, 900, 1300, 1800]}
+      sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1279px) 50vw, (min-width: 1280px) 900px"
+      alt=""
+    />
+
+    <Image
+      slot="rightContent"
+      src={ZoomDark}
+      class="max-h-75vh light:hidden hidden h-auto w-full rounded-lg object-contain dark:block"
+      widths={[256, 550, 700, 900, 1300, 1800]}
+      sizes="(max-width: 1023px) 80vw, (min-width: 1024px) and (max-width: 1279px) 50vw, (min-width: 1280px) 900px"
+      alt=""
+    />
+  </PageHeroSection>
+</Layout>

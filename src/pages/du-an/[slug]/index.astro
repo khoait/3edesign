@@ -1,0 +1,93 @@
+---
+import { Grid } from "@components/Grid";
+import RelatedProjectsSection from "@components/sections/RelatedProjectsSection.astro";
+import { H2, H6 } from "@components/typography";
+import { BackLink } from "@components/widgets/arrow-link";
+import Layout from "@layouts/PageLayout.astro";
+import { l, t } from "astro-i18n";
+import { Image, getImage } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export const getStaticPaths = async () => {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+};
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { Content, headings } = await project.render();
+
+const projects = await getCollection("projects");
+
+const relatedProjects = projects
+  .filter((p) => p.slug !== project.slug)
+  .filter((p) =>
+    p.data.categories.some((category) =>
+      project.data.categories.includes(category),
+    ),
+  )
+  .toSorted(
+    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+  )
+  .slice(0, 3);
+
+const coverImageSource = (await getImage({ src: project.data.image })).src;
+---
+
+<Layout
+  title={project.data.title}
+  description={project.data.description}
+  image={coverImageSource}>
+  <Grid client:load className="mb-10 mt-24 lg:mb-24">
+    <div
+      class="col-span-full flex justify-between lg:col-span-8 lg:col-start-3">
+      <BackLink client:load href={l("/projects")}>
+        {t("label.backToProjects")}
+      </BackLink>
+    </div>
+  </Grid>
+
+  <Grid client:load as="header" className="mb-12">
+    <div class="col-span-full lg:col-span-8 lg:col-start-3">
+      <H2>{project.data.title}</H2>
+      <H6 as="p" variant="secondary" className="mt-2">
+        <span>{project.data.location}</span> - <span
+          >{project.data.area} m<sup>2</sup></span
+        >
+      </H6>
+    </div>
+
+    <div class="col-span-full mt-10 lg:col-span-10 lg:col-start-2 lg:mt-16">
+      <div class="relative aspect-[3/4] md:aspect-[3/2]">
+        <Image
+          src={project.data.image}
+          alt={project.data.title}
+          class="rounded-lg object-cover object-center"
+          widths={[280, 560, 840, 1100, 1650, 2500, 2100, 3100]}
+          sizes="[(max-width:1023px) 80vw,(min-width:1024px) and (max-width:1620px) 67vw,1100px"
+          ]
+        />
+      </div>
+    </div>
+  </Grid>
+
+  <main>
+    <Grid className="prose prose-light mb-24 break-words dark:prose-dark">
+      <Content />
+    </Grid>
+  </main>
+
+  <RelatedProjectsSection
+    class="mb-40 lg:mb-48"
+    projects={relatedProjects}
+    title={t("section.relatedProjects.title")}
+    description={t("section.relatedProjects.subTitle")}
+    showArrowButton={true}
+  />
+</Layout>

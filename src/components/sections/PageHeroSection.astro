@@ -1,0 +1,52 @@
+---
+import { Grid } from "../Grid";
+import { H1, H2 } from "../typography";
+import { ArrowLink } from "../widgets/arrow-link";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  arrowLabel?: string;
+  arrowUrl?: string;
+  arrowDirection?: "up" | "down" | "left" | "right";
+}
+
+const { title, subtitle, arrowLabel, arrowUrl, arrowDirection } = Astro.props;
+---
+
+<Grid
+  client:load
+  className="mb-0 h-auto py-16 lg:min-h-[40rem] lg:pb-12"
+  as="section">
+  <div class="col-span-full mb-12 lg:col-span-7 lg:col-start-6 lg:mb-0 lg:px-0">
+    <slot name="rightContent" />
+  </div>
+
+  <div
+    class="col-span-full pt-6 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:flex lg:h-full lg:flex-col">
+    <div class="flex flex-auto flex-col">
+      <H1>{title}</H1>
+      {
+        subtitle ? (
+          <H2 as="p" variant="secondary" className="mt-3">
+            {subtitle}
+          </H2>
+        ) : null
+      }
+      <slot name="description" />
+    </div>
+    {
+      arrowUrl ? (
+        <div class="hidden pt-12 lg:block">
+          <ArrowLink
+            client:load
+            href={arrowUrl}
+            direction={arrowDirection ?? "down"}
+            textSize="small">
+            {arrowLabel}
+          </ArrowLink>
+        </div>
+      ) : null
+    }
+  </div>
+</Grid>

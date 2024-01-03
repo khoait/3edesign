@@ -1,0 +1,20 @@
+---
+import { Grid } from "@components/Grid";
+import { H4 } from "@components/typography";
+import type { CollectionEntry } from "astro:content";
+import Category from "./Category.astro";
+
+type Props = {
+  title?: string;
+  categories: CollectionEntry<"projects">["data"]["categories"];
+};
+
+const { title, categories } = Astro.props;
+---
+
+<Grid client:load className="mb-14">
+  <H4 as="div" className="col-span-full mb-6">{title}</H4>
+  <div class="col-span-full -mb-4 -mr-4 flex flex-wrap lg:col-span-10">
+    {categories.map((category) => <Category category={category} />)}
+  </div>
+</Grid>

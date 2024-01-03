@@ -1,0 +1,20 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Page from "../../../du-an/[slug]/index.astro";
+export const prerender = false;
+
+export const getStaticPaths = async () => {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+};
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+const { props } = Astro;
+---
+
+<Page {...props} />

@@ -1,0 +1,45 @@
+---
+import { Grid } from "@components/Grid";
+import ProjectCard from "@components/widgets/ProjectCard.astro";
+import SectionHeader from "@components/widgets/SectionHeader.astro";
+import { t } from "astro-i18n";
+import { type CollectionEntry } from "astro:content";
+import clsx from "clsx";
+
+interface Props {
+  projects: CollectionEntry<"projects">[];
+  title: string;
+  description: string;
+  showArrowButton?: boolean;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  showArrowButton,
+  projects,
+  class: className,
+} = Astro.props;
+---
+
+<div class:list={[className]}>
+  <SectionHeader
+    title={title}
+    subTitle={description}
+    cta={showArrowButton ? t("section.relatedProjects.cta") : undefined}
+    ctaUrl="/projects"
+  />
+  <Grid client:idle className="mt-10 gap-y-16 lg:mt-12">
+    {
+      projects.slice(0, 3).map((project, idx) => (
+        <div
+          class={clsx("col-span-4", {
+            "hidden lg:block": idx >= 2,
+          })}>
+          <ProjectCard project={project} />
+        </div>
+      ))
+    }
+  </Grid>
+</div>

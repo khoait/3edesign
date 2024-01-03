@@ -1,0 +1,16 @@
+---
+import { l } from "astro-i18n";
+import { toNonAccentString } from "~/i18n/utils";
+
+type Props = {
+  category: string;
+};
+
+const { category } = Astro.props;
+---
+
+<a
+  href={l(`/category/${toNonAccentString(category)}`)}
+  class="text-primary bg-secondary focus-ring relative mb-4 mr-4 block h-auto w-auto rounded-full px-6 py-3 opacity-100 transition"
+  >{category}</a
+>

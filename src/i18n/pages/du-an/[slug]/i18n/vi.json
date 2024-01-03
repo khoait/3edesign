@@ -1,0 +1,10 @@
+{
+  "backToProjects": "Quay lại danh sách dự án",
+  "section":{
+    "relatedProjects":{
+      "title": "Nếu bạn thích dự án này.",
+      "subTitle": "Bạn cũng sẽ thích các dự án dưới đây.",
+      "cta": "Xem tất cả dự án"
+    }
+  }
+}

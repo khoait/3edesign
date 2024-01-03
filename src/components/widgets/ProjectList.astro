@@ -1,0 +1,25 @@
+---
+import { Grid } from "@components/Grid";
+import type { CollectionEntry } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+type Props = {
+  projects: CollectionEntry<"projects">[];
+};
+
+const { projects } = Astro.props;
+---
+
+<Grid client:load className="mb-64">
+  {
+    projects
+      .toSorted(
+        (a, b) =>
+          a.data.publishedDate.getTime() - b.data.publishedDate.getTime(),
+      )
+      .map((project) => (
+        <div class="col-span-4 mb-10">
+          <ProjectCard project={project} />
+        </div>
+      ))
+  }
+</Grid>
