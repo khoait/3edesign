@@ -22,7 +22,7 @@ import { t } from "astro-i18n";
       </address>
     </div>
     <div slot="rightContent" class="h-full w-full">
-      <Map client:only="react" />
+      <Map client:only="react" mapKey={import.meta.env.GMAP_KEY} />
     </div>
   </PageHeroSection>
   <div class="h-24"></div>

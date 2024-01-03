@@ -13,7 +13,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { useReadLocalStorage } from "~/hooks/useReadLocalStorage";
 
 const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)";
-export default function Map() {
+export default function Map({ mapKey }: { mapKey: string }) {
   const isDarkOS = useMediaQuery(COLOR_SCHEME_QUERY);
   const preferedTheme = useReadLocalStorage("3edesign-theme");
 
@@ -103,7 +103,7 @@ export default function Map() {
   ];
 
   return (
-    <Wrapper apiKey="AIzaSyDds2_MyZODmjugyhDkCgZHWTyHpDa6W0U">
+    <Wrapper apiKey={mapKey}>
       <Gmap
         center={center}
         zoom={15}
