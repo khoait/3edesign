@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://3edesign.vercel.app",
+  site: "https://www.3edesign.studio/",
   i18n: {
     defaultLocale: "vi",
     locales: ["vi", "en"],
