@@ -1,0 +1,65 @@
+---
+import ThemeToggle from "@components/core/ThemeToggle.astro";
+import { astroI18n, l, t } from "astro-i18n";
+import ToggleMenu from "../core/ToggleMenu.astro";
+import Logo from "./Logo.astro";
+
+const navLinks = [
+  {
+    href: l("/"),
+    text: t("nav.home"),
+    isCurrent: astroI18n.route === "/",
+  },
+  {
+    href: l("/projects"),
+    text: t("nav.projects"),
+    isCurrent: astroI18n.route.startsWith("/projects"),
+  },
+  {
+    href: l("/about"),
+    text: t("nav.about"),
+    isCurrent: astroI18n.route.startsWith("/about"),
+  },
+  {
+    href: l("/contact"),
+    text: t("nav.contact"),
+    isCurrent: astroI18n.route.startsWith("/contact"),
+  },
+];
+---
+
+<nav
+  class="text-primary mx-auto flex max-w-8xl flex-wrap items-center justify-between">
+  <div>
+    <a
+      class="block whitespace-nowrap text-2xl font-medium text-black focus:outline-none dark:text-white"
+      href={l("/")}>
+      <Logo />
+    </a>
+  </div>
+
+  <ul class="hidden items-center md:flex">
+    {
+      navLinks.map(({ href, text, isCurrent }) => (
+        <li class="px-5 py-2">
+          <a
+            class={`underlined hover:text-primary focus:text-primary block whitespace-nowrap text-lg font-medium focus:outline-none ${
+              isCurrent ? "text-primary active" : "text-secondary"
+            }`}
+            href={href}>
+            {text}
+          </a>
+        </li>
+      ))
+    }
+
+    <li>
+      <ThemeToggle />
+    </li>
+  </ul>
+
+  <div class="flex items-center justify-center gap-3 md:hidden">
+    <ThemeToggle />
+    <ToggleMenu />
+  </div>
+</nav>
