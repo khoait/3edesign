@@ -39,7 +39,9 @@ relatedProjects.sort(
 
 const top3RelatedProjects = relatedProjects.slice(0, 3);
 
-const coverImageSource = (await getImage({ src: project.data.image })).src;
+const coverImageSource = (
+  await getImage({ src: project.data.image, width: 1200, height: 630 })
+).src;
 ---
 
 <Layout
