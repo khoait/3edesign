@@ -13,17 +13,17 @@ const navLinks = [
   {
     href: l("/projects"),
     text: t("nav.projects"),
-    isCurrent: astroI18n.route.startsWith("/projects"),
+    isCurrent: astroI18n.route.startsWith(l("/projects")),
   },
   {
     href: l("/about"),
     text: t("nav.about"),
-    isCurrent: astroI18n.route.startsWith("/about"),
+    isCurrent: astroI18n.route.startsWith(l("/about")),
   },
   {
     href: l("/contact"),
     text: t("nav.contact"),
-    isCurrent: astroI18n.route.startsWith("/contact"),
+    isCurrent: astroI18n.route.startsWith(l("/contact")),
   },
 ];
 ---
