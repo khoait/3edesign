@@ -18,36 +18,36 @@ if (!project) {
   class="relative z-20 flex h-full w-full flex-col justify-end gap-4 bg-cover bg-center p-8 md:gap-10">
   <a
     href={l(`/projects/${project.slug}`)}
-    class="line-clamp-1 font-serif text-3xl text-white"
+    class="text-primary line-clamp-1 font-serif text-3xl"
     >{project.data.title}
     <div
       class="absolute inset-0 left-0 right-0 z-10 rounded-lg md:-left-12 md:-right-12 lg:left-0 lg:right-0">
     </div>
   </a>
-  <p class="line-clamp-3 text-lg text-white">{project.data.description}</p>
+  <p class="text-primary line-clamp-3 text-lg">{project.data.description}</p>
   <div class="flex flex-nowrap justify-between gap-2">
     <div class="flex flex-col">
-      <span class="text-xs font-semibold uppercase text-white"
+      <span class="text-primary text-xs font-semibold uppercase"
         >{t("label.category")}</span
       >
-      <span class="text-white">{project.data.categories.at(0)}</span>
+      <span class="text-primary">{project.data.categories.at(0)}</span>
     </div>
     <div class="flex flex-col">
-      <span class="text-xs font-semibold uppercase text-white"
+      <span class="text-primary text-xs font-semibold uppercase"
         >{t("label.location")}</span
       >
-      <span class="text-white">{project.data.location}</span>
+      <span class="text-primary">{project.data.location}</span>
     </div>
     <div class="flex flex-col">
-      <span class="text-xs font-semibold uppercase text-white"
+      <span class="text-primary text-xs font-semibold uppercase"
         >{t("label.area")}</span
       >
-      <span class="text-white">{project.data.area} m<sup>2</sup></span>
+      <span class="text-primary">{project.data.area} m<sup>2</sup></span>
     </div>
   </div>
 </div>
 <span
-  class="absolute bottom-0 left-0 z-10 h-1/2 w-full bg-gradient-to-b from-transparent to-black/50"
+  class="absolute bottom-0 left-0 z-10 h-1/2 w-full bg-gradient-to-b from-transparent via-white/20 via-10% to-white/70 dark:via-black/20 dark:to-black/80"
 ></span>
 
 <div
