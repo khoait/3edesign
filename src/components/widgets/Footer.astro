@@ -104,20 +104,34 @@ const currentYear = new Date().getFullYear();
                 <a
                   class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
                   href={l(
-                    `/category/${toNonAccentString(t("footer.apartments"))}`,
+                    `/category/${toNonAccentString(
+                      t("footer.apartments", undefined, {
+                        locale: "vi",
+                      }),
+                    )}`,
                   )}>{t("footer.apartments")}</a
                 >
               </li><li class="py-1">
                 <a
                   class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
-                  href={l(`/category/${toNonAccentString(t("footer.houses"))}`)}
-                  >{t("footer.houses")}</a
+                  href={l(
+                    `/category/${toNonAccentString(
+                      t("footer.houses", undefined, {
+                        locale: "vi",
+                      }),
+                    )}`,
+                  )}>{t("footer.houses")}</a
                 >
               </li><li class="py-1">
                 <a
                   class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
-                  href={l(`/category/${toNonAccentString(t("footer.shops"))}`)}
-                  >{t("footer.shops")}</a
+                  href={l(
+                    `/category/${toNonAccentString(
+                      t("footer.shops", undefined, {
+                        locale: "vi",
+                      }),
+                    )}`,
+                  )}>{t("footer.shops")}</a
                 >
               </li>
             </ul>
@@ -131,21 +145,33 @@ const currentYear = new Date().getFullYear();
                 <a
                   class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
                   href={l(
-                    `/category/${toNonAccentString(t("footer.architecture"))}`,
+                    `/category/${toNonAccentString(
+                      t("footer.architecture", undefined, {
+                        locale: "vi",
+                      }),
+                    )}`,
                   )}>{t("footer.architecture")}</a
                 >
               </li><li class="py-1">
                 <a
                   class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
                   href={l(
-                    `/category/${toNonAccentString(t("footer.interior"))}`,
+                    `/category/${toNonAccentString(
+                      t("footer.interior", undefined, {
+                        locale: "vi",
+                      }),
+                    )}`,
                   )}>{t("footer.interior")}</a
                 >
               </li><li class="py-1">
                 <a
                   class="text-secondary underlined hover:text-primary focus:text-primary inline-block whitespace-nowrap text-lg focus:outline-none"
                   href={l(
-                    `/category/${toNonAccentString(t("footer.landscape"))}`,
+                    `/category/${toNonAccentString(
+                      t("footer.landscape", undefined, {
+                        locale: "vi",
+                      }),
+                    )}`,
                   )}>{t("footer.landscape")}</a
                 >
               </li>
