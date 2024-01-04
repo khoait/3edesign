@@ -20,7 +20,7 @@ import { Image } from "astro:assets";
   <PageHeroSection
     title={t("section.hero.title")}
     subtitle={t("section.hero.subTitle")}
-    arrowUrl="#about"
+    arrowUrl="#story"
     arrowLabel={t("section.hero.cta")}>
     <Image
       slot="rightContent"
@@ -33,7 +33,7 @@ import { Image } from "astro:assets";
   </PageHeroSection>
 
   <Grid className="mb-24 mt-16 lg:mb-48">
-    <div class="col-span-full mb-12 lg:col-span-4 lg:mb-0">
+    <div id="story" class="col-span-full mb-12 lg:col-span-4 lg:mb-0">
       <H1>{t("section.story.title")}</H1>
     </div>
     <div class="col-span-full mb-8 lg:col-span-8 lg:mb-20">

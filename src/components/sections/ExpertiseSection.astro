@@ -1,6 +1,6 @@
 ---
 import { ArrowLink } from "@components/widgets/arrow-link";
-import { t } from "astro-i18n";
+import { l, t } from "astro-i18n";
 import { Icon } from "astro-icon";
 import { Grid } from "../Grid";
 import { H3 } from "../typography";
@@ -57,7 +57,7 @@ const features = [
           ))
         }
       </ul>
-      <ArrowLink client:load href="/projects" className="mt-20">
+      <ArrowLink client:load href={l("/projects")} className="mt-20">
         {t("section.expertise.cta")}
       </ArrowLink>
     </div>

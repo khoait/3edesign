@@ -23,9 +23,15 @@ export const HeroCarousel = ({ slide1, slide2, slide3 }: HeroCarouselProps) => {
         parallax={true}
         //scrollbar={{ draggable: true }}
         className="!h-hero !w-full">
-        <SwiperSlide className="!overflow-hidden">{slide1}</SwiperSlide>
-        <SwiperSlide className="!overflow-hidden">{slide2}</SwiperSlide>
-        <SwiperSlide className="!overflow-hidden">{slide3}</SwiperSlide>
+        <SwiperSlide className="cursor-grab !overflow-hidden">
+          {slide1}
+        </SwiperSlide>
+        <SwiperSlide className="cursor-grab !overflow-hidden">
+          {slide2}
+        </SwiperSlide>
+        <SwiperSlide className="cursor-grab !overflow-hidden">
+          {slide3}
+        </SwiperSlide>
       </Swiper>
     </>
   );

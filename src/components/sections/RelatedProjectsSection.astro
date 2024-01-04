@@ -2,7 +2,7 @@
 import { Grid } from "@components/Grid";
 import ProjectCard from "@components/widgets/ProjectCard.astro";
 import SectionHeader from "@components/widgets/SectionHeader.astro";
-import { t } from "astro-i18n";
+import { l, t } from "astro-i18n";
 import { type CollectionEntry } from "astro:content";
 import clsx from "clsx";
 
@@ -28,7 +28,7 @@ const {
     title={title}
     subTitle={description}
     cta={showArrowButton ? t("section.relatedProjects.cta") : undefined}
-    ctaUrl="/projects"
+    ctaUrl={l("/projects")}
   />
   <Grid client:idle className="mt-10 gap-y-16 lg:mt-12">
     {
