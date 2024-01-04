@@ -18,7 +18,9 @@ export interface Props {
 const {
   title = t("siteTitle"),
   description = t("siteTitle"),
-  image = (await getImage({ src: logo.src, width: 630, height: 630 })).src,
+  image = (
+    await getImage({ src: logo, width: 630, height: 630, format: "png" })
+  ).src,
 } = Astro.props;
 ---
 
