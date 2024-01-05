@@ -26,10 +26,6 @@ import Icon from "astro-icon";
   const themeKey = "3edesign-theme";
 
   function updateHTMLTheme(mode: "light" | "dark") {
-    const themeColorMetaTag = document.head.querySelector(
-      'meta[name="theme-color"]',
-    );
-
     if (mode === "dark") {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
