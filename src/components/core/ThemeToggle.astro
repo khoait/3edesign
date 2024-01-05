@@ -23,38 +23,11 @@ import Icon from "astro-icon";
 </style>
 
 <script>
-  const themeKey = "3edesign-theme";
-
-  function updateHTMLTheme(mode: "light" | "dark") {
-    if (mode === "dark") {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-
-      document.head
-        .querySelector('meta[name="color-scheme"]')
-        ?.setAttribute("content", "dark light");
-      document.head
-        .querySelector("meta[name='theme-color']")
-        ?.setAttribute("content", "#1F2028");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-      document.head
-        .querySelector('meta[name="color-scheme"]')
-        ?.setAttribute("content", "light dark");
-      document.head
-        .querySelector("meta[name='theme-color']")
-        ?.setAttribute("content", "#ffffff");
-    }
-  }
-
-  function updateStorageTheme(mode: "light" | "dark") {
-    if (mode === "dark") {
-      localStorage.setItem(themeKey, "dark");
-    } else {
-      localStorage.setItem(themeKey, "light");
-    }
-  }
+  import {
+    isDarkMode,
+    updateHTMLTheme,
+    updateStorageTheme,
+  } from "./ThemeUtils";
 
   const handleToggleClick = () => {
     const element = document.documentElement;
@@ -65,6 +38,15 @@ import Icon from "astro-icon";
     updateStorageTheme(isDark ? "dark" : "light");
     window.dispatchEvent(new Event("storage"));
   };
+
+  const cl = document.documentElement.classList;
+  const themeAlreadyApplied = cl.contains("light") || cl.contains("dark");
+  if (themeAlreadyApplied) {
+    // this script shouldn't exist if the theme is already applied!
+    console.warn("Theme is already applied");
+  } else {
+    updateHTMLTheme(isDarkMode ? "dark" : "light");
+  }
 
   const toggles = document.querySelectorAll(".theme-toggle");
   toggles.forEach((t) => t.addEventListener("click", handleToggleClick));
