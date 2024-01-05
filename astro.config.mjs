@@ -1,12 +1,15 @@
 import react from "@astrojs/react";
-import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.3edesign.studio/",
+  prefetch: {
+    prefetchAll: true,
+  },
   i18n: {
     defaultLocale: "vi",
     locales: ["vi", "en"],
