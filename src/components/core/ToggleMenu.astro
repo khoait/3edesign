@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon";
-
 const {
   label = "Toggle Menu",
   class:
@@ -10,6 +8,80 @@ const {
 } = Astro.props;
 ---
 
-<button type="button" class={className} aria-label={label} data-toggle-menu>
-  <Icon name={iconName} class={iconClass} optimize={false} />
+<button
+  type="button"
+  class={className}
+  aria-label={label}
+  data-toggle-menu
+  aria-controls="mobile-navigation"
+  aria-expanded="false">
+  <svg viewBox="-50 -40 100 80" width="28" height="28">
+    <defs>
+      <path
+        id="line"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="10"
+        stroke-linecap="round"
+        d="M -40 0 h 80"></path>
+    </defs>
+    <g>
+      <g class="translate" transform="translate(0 -30)">
+        <g class="rotate" transform="rotate(-45)">
+          <use transform="rotate(45)" href="#line"></use>
+        </g>
+      </g>
+
+      <g class="rotate" transform="rotate(45)">
+        <use transform="rotate(-45)" href="#line"></use>
+      </g>
+
+      <g class="translate" transform="translate(0 30)">
+        <g class="rotate" transform="rotate(-45)">
+          <use transform="rotate(45)" href="#line"></use>
+        </g>
+      </g>
+    </g>
+  </svg>
 </button>
+
+<style>
+  button[data-toggle-menu] .translate {
+    transition: transform 0.15s ease-in-out;
+    transition-delay: 0.15s;
+  }
+  button[data-toggle-menu] .rotate {
+    transition: transform 0.15s ease-in-out;
+    transition-delay: 0s;
+  }
+  button[data-toggle-menu].open .translate {
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+  button[data-toggle-menu].open .rotate {
+    transform: rotate(0);
+    transition-delay: 0.15s;
+  }
+</style>
+
+<script is:inline>
+  const button = document.querySelector("button[data-toggle-menu]");
+
+  button?.addEventListener("click", () => {
+    const nav = document.getElementById("mobile-menu");
+    const isOpened = button.getAttribute("aria-expanded") === "true";
+    if (isOpened) {
+      button.setAttribute("aria-expanded", "false");
+      button.classList.remove("open");
+      nav?.setAttribute("aria-hidden", "true");
+      nav?.classList.add("invisible", "opacity-0", "translate-y-0");
+      nav?.classList.remove("visible", "opacity-100", "translate-y-40");
+    } else {
+      button.setAttribute("aria-expanded", "true");
+      button.classList.add("open");
+      nav?.setAttribute("aria-hidden", "false");
+      nav?.classList.remove("invisible", "opacity-0", "translate-y-0");
+      nav?.classList.add("visible", "opacity-100", "translate-y-40");
+    }
+  });
+</script>

@@ -40,7 +40,8 @@
     "backToProjects": "Back to projects",
     "category": "Category",
     "location": "Location",
-    "area": "Total area"
+    "area": "Total area",
+    "toggleMenu": "Toggle menu"
   },
   "notFound404":{
     "title": "404 - Oh no, you found a page that's missing stuff.",
