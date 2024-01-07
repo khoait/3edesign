@@ -18,31 +18,37 @@ if (!project) {
   class="relative z-20 flex h-full w-full flex-col justify-end gap-4 bg-cover bg-center p-8 md:gap-10">
   <a
     href={l(`/projects/${project.slug}`)}
-    class="text-primary line-clamp-1 font-serif text-3xl"
+    class="text-primary text-shadow line-clamp-1 font-serif text-3xl"
     >{project.data.title}
     <div
       class="absolute inset-0 left-0 right-0 z-10 rounded-lg md:-left-12 md:-right-12 lg:left-0 lg:right-0">
     </div>
   </a>
-  <p class="text-primary line-clamp-3 text-lg">{project.data.description}</p>
+  <p class="text-primary text-shadow line-clamp-3 text-lg">
+    {project.data.description}
+  </p>
   <div class="flex flex-nowrap justify-between gap-2">
     <div class="flex flex-col">
-      <span class="text-primary text-xs font-semibold uppercase"
+      <span class="text-primary text-shadow text-xs font-semibold uppercase"
         >{t("label.category")}</span
       >
-      <span class="text-primary">{project.data.categories.at(0)}</span>
+      <span class="text-primary text-shadow"
+        >{project.data.categories.at(0)}</span
+      >
     </div>
     <div class="flex flex-col">
-      <span class="text-primary text-xs font-semibold uppercase"
+      <span class="text-primary text-shadow text-xs font-semibold uppercase"
         >{t("label.location")}</span
       >
-      <span class="text-primary">{project.data.location}</span>
+      <span class="text-primary text-shadow">{project.data.location}</span>
     </div>
     <div class="flex flex-col">
-      <span class="text-primary text-xs font-semibold uppercase"
+      <span class="text-primary text-shadow text-xs font-semibold uppercase"
         >{t("label.area")}</span
       >
-      <span class="text-primary">{project.data.area} m<sup>2</sup></span>
+      <span class="text-primary text-shadow"
+        >{project.data.area} m<sup>2</sup></span
+      >
     </div>
   </div>
 </div>

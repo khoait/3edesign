@@ -50,6 +50,10 @@
   .swiper-pagination-bullet--active {
     @apply !bg-white;
   }
+
+  .text-shadow {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  }
 }
 
 @layer components {
