@@ -1,6 +1,40 @@
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+---
+import { AstroFont } from "astro-font";
+---
+
+<AstroFont
+  config={[
+    {
+      fetch: true,
+      name: "Inter",
+      src: [
+        {
+          style: "normal",
+          weight: "400",
+          path: "https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2",
+        },
+        {
+          style: "normal",
+          weight: "500",
+          path: "https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2",
+        },
+        {
+          style: "normal",
+          weight: "700",
+          path: "https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2",
+        },
+      ],
+      preload: true,
+      display: "swap",
+      selector: "body",
+      fallback: "sans-serif",
+    },
+  ]}
+/>
+
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap"
   rel="stylesheet"
-/>
+/> -->
