@@ -27,39 +27,24 @@ const {
 
 <style>
   button[data-toggle-menu] .line {
-    -webkit-transition:
-      y 150ms ease-in-out,
-      rotate 150ms ease-in-out 150ms;
-    -moz-transition:
-      y 150ms ease-in-out,
-      rotate 150ms ease-in-out 150ms;
-    -o-transition:
-      y 150ms ease-in-out,
-      rotate 150ms ease-in-out 150ms;
     transition:
-      y 150ms ease-in-out 150ms,
+      transform 150ms ease-in-out 150ms,
       rotate 150ms ease-in-out;
   }
 
   button[data-toggle-menu].open .line {
-    -webkit-transition:
-      y 150ms ease-in-out,
-      rotate 150ms ease-in-out 150ms;
-    -moz-transition:
-      y 150ms ease-in-out,
-      rotate 150ms ease-in-out 150ms;
-    -o-transition:
-      y 150ms ease-in-out,
-      rotate 150ms ease-in-out 150ms;
     transition:
-      y 150ms ease-in-out,
+      transform 150ms ease-in-out,
       rotate 150ms ease-in-out 150ms;
   }
 
-  button[data-toggle-menu].open :is(.top, .bottom) {
-    y: -1;
+  button[data-toggle-menu].open .top {
+    transform: translateY(5px);
   }
 
+  button[data-toggle-menu].open .bottom {
+    transform: translateY(-5px);
+  }
   button[data-toggle-menu].open :is(.top, .middle) {
     rotate: 45deg;
   }
