@@ -1,11 +1,9 @@
 ---
+import SeoTags from "@components/atoms/SeoTags.astro";
 import BaseHead from "@components/core/BaseHead.astro";
 import BasicScripts from "@components/core/BasicScripts.astro";
 import ThemeProvider from "@components/core/ThemeProvider.astro";
-import logo from "@images/logo-og.png";
-import { astroI18n, t } from "astro-i18n";
-import { SEO } from "astro-seo";
-import { getImage } from "astro:assets";
+import { astroI18n } from "astro-i18n";
 import "~/assets/styles/base.css";
 import "~/assets/styles/globals.css";
 import "~/assets/styles/prose.css";
@@ -16,76 +14,14 @@ export interface Props {
   image?: string;
 }
 
-const {
-  title = t("siteTitle"),
-  description = t("siteTitle"),
-  image = (await getImage({ src: logo })).src,
-} = Astro.props;
-
-const locale = astroI18n.locale === "vi" ? "vi_VN" : "en_US";
-const otherLocales = astroI18n.locales
-  .filter((l) => l !== astroI18n.locale)
-  .map((l) => (l === "vi" ? "vi_VN" : "en_US"));
-
-const params: Record<string, string> = {};
-for (const [key, value] of Object.entries(Astro.params)) {
-  if (value === undefined) continue;
-  params[key] = String(value);
-}
-
-const hrefLangs = astroI18n.locales.map((locale) => ({
-  href:
-    Astro.url.origin +
-    astroI18n.l(Astro.url.pathname, params, {
-      targetLocale: locale,
-    }),
-  hreflang: locale,
-}));
+const { title, description, image } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={astroI18n.locale} class="motion-safe:scroll-smooth">
   <head>
     <BaseHead />
-    <SEO
-      title={title}
-      description={description}
-      openGraph={{
-        basic: {
-          type: "website",
-          title: title,
-          image: image,
-        },
-        optional: {
-          description: description,
-          locale: locale,
-          localeAlternate: otherLocales,
-        },
-        image: {
-          type: "image/webp",
-          alt: title,
-          width: 1200,
-          height: 630,
-        },
-      }}
-      twitter={{
-        card: "summary_large_image",
-        title: title,
-        image: image,
-        imageAlt: title,
-        description: description,
-      }}
-      extend={{
-        link: [
-          ...hrefLangs.map(({ href, hreflang }) => ({
-            rel: "alternate",
-            href,
-            hreflang,
-          })),
-          { rel: "sitemap", href: "/sitemap-index.xml" },
-        ],
-      }}
-    />
+    <SeoTags title={title} description={description} image={image} />
     <ThemeProvider />
   </head>
   <body class="bg-white antialiased transition duration-500 dark:bg-gray-900">
