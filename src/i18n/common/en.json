@@ -1,11 +1,12 @@
 {
   "nav": {
+    "logo": "3E Design Logo",
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "projects": "Projects"    
+    "projects": "Projects"
   },
-  "footer":{
+  "footer": {
     "projects": "Projects",
     "expertise": "Expertise",
     "company": "Company",
@@ -19,7 +20,12 @@
     "contact": "Contact",
     "career": "Career"
   },
-  "section":{
+  "social": {
+    "facebook": "3E Design on Facebook",
+    "youtube": "3E Design on Youtube",
+    "instagram": "3E Design on Instagram"
+  },
+  "section": {
     "contact": {
       "title": "Get in touch.",
       "subTitle": "Got a question or just want to talk?",
@@ -27,23 +33,24 @@
       "callNow": "Call now",
       "sendEmail": "Send email"
     },
-    "relatedProjects":{
+    "relatedProjects": {
       "title": "If you found this project helpful",
       "subTitle": "You will love these ones as well.",
       "cta": "See all projects"
     },
-    "categoryList":{
+    "categoryList": {
       "title": "Projects Tagged"
     }
   },
-  "label":{
+  "label": {
     "backToProjects": "Back to projects",
     "category": "Category",
     "location": "Location",
     "area": "Total area",
-    "toggleMenu": "Toggle menu"
+    "toggleMenu": "Toggle menu",
+    "toggleTheme": "Toggle theme"
   },
-  "notFound404":{
+  "notFound404": {
     "title": "404 - Oh no, you found a page that's missing stuff.",
     "subtitle": "The page you are looking for doesn't exist or has been moved.",
     "cta": "Back to home"

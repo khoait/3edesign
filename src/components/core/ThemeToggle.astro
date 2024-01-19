@@ -1,8 +1,9 @@
 ---
 import Icon from "astro-icon";
+import {t} from "astro-i18n";
 ---
 
-<button
+<button type="button" aria-label={t("label.toggleTheme")}
   class="theme-toggle border-secondary inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 p-1 transition hover:border-brand focus:border-brand focus:outline-none">
   <div class="relative h-6 w-6">
     <span
