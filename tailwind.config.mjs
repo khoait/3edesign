@@ -34,13 +34,13 @@ export default {
         serif: ["Playfair Display", "serif"],
       },
       fontSize: {
-        xl: "1.375rem", // 22px
-        "2xl": "1.5625rem", // 25px
-        "3xl": "1.875rem", // 30px
-        "4xl": "2.5rem", // 40px
-        "5xl": "3.125rem", // 50px
-        "6xl": "3.75rem", // 60px
-        "7xl": "4.375rem", // 70px
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.625rem",
+        "4xl": "1.75rem",
+        "5xl": "2.5rem",
+        "6xl": "2.75rem",
+        "7xl": "3rem",
       },
       colors: {
         brand: {
