@@ -4,9 +4,9 @@ import { l, t } from "astro-i18n";
 
 <div
   id="mobile-menu"
-  class="invisible absolute inset-0 z-50 opacity-0 transition duration-200 ease-in-out motion-reduce:transition-none">
+  class="invisible fixed inset-0 -top-48 z-50 opacity-0 transition-all duration-200 ease-in-out motion-reduce:transition-none">
   <div
-    class="bg-primary flex h-full flex-col overflow-y-scroll border-t border-gray-200 dark:border-gray-600">
+    class="bg-primary flex h-full flex-col overflow-y-scroll border-t border-gray-200 pt-48 dark:border-gray-600">
     <ul>
       <li>
         <a

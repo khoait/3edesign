@@ -1,9 +1,57 @@
 ---
+import { astroI18n } from "astro-i18n";
 import MobileMenu from "./MobileMenu.astro";
 import Navbar from "./Navbar.astro";
+
+const isHomePage = astroI18n.route === "/";
 ---
 
-<div class="px-5vw py-8 lg:py-12">
+<div
+  id="primary-nav"
+  class={`fixed left-0 top-0 z-[999] w-full px-5vw py-8 transition-all duration-300 motion-reduce:transition-none lg:py-12 ${
+    isHomePage ? "home" : ""
+  }`}>
   <Navbar />
 </div>
 <MobileMenu />
+
+<style>
+  .active {
+    @apply from-currentBg bg-gradient-to-b;
+  }
+
+  .hide:not(:hover) {
+    @apply invisible opacity-0;
+  }
+</style>
+
+<script is:inline>
+  const body = document.body;
+  let lastScroll = 0;
+  const primaryNav = document.getElementById("primary-nav");
+  const menuToggle = document.querySelector("button[data-toggle-menu]");
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    const isMobileMenuOpen =
+      menuToggle.getAttribute("aria-expanded") === "true";
+    if (currentScroll <= 0) {
+      primaryNav.classList.remove("hide", "active");
+      return;
+    }
+    if (
+      currentScroll > lastScroll &&
+      !primaryNav.classList.contains("hide") &&
+      !isMobileMenuOpen
+    ) {
+      primaryNav.classList.remove("active");
+      primaryNav.classList.add("hide");
+    } else if (
+      currentScroll < lastScroll &&
+      primaryNav.classList.contains("hide")
+    ) {
+      primaryNav.classList.remove("hide");
+      primaryNav.classList.add("active");
+    }
+    lastScroll = currentScroll;
+  });
+</script>

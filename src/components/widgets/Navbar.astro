@@ -33,7 +33,7 @@ const navLinks = [
   <div>
     <a
       aria-label={t("nav.logo")}
-      class="block whitespace-nowrap text-2xl font-medium text-black focus:outline-none dark:text-white"
+      class="block whitespace-nowrap text-2xl font-medium focus:outline-none"
       href={l("/")}>
       <Logo />
     </a>
@@ -64,3 +64,9 @@ const navLinks = [
     <ToggleMenu />
   </div>
 </nav>
+
+<style is:inline>
+  #primary-nav.home:not(.active) nav > ul > li > .underlined {
+    color: var(--text-primary) !important;
+  }
+</style>

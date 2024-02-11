@@ -57,7 +57,7 @@ const {
 <script is:inline>
   const button = document.querySelector("button[data-toggle-menu]");
 
-  button?.addEventListener("click", () => {
+  button?.addEventListener("click", (event) => {
     const nav = document.getElementById("mobile-menu");
     const isOpened = button.getAttribute("aria-expanded") === "true";
     if (isOpened) {
@@ -67,10 +67,12 @@ const {
       nav?.classList.add("invisible", "opacity-0", "translate-y-0");
       nav?.classList.remove("visible", "opacity-100", "translate-y-40");
 
-      document.body.classList.remove("fixed");
-      document.body.classList.remove("overflow-y-scroll");
-      document.body.style.removeProperty("height");
-      document.body.style.removeProperty("width");
+      document.body.classList.remove("overflow-y-hidden");
+
+      setTimeout(() => {
+        button.blur();
+        document.body.focus();
+      }, 100);
     } else {
       button.setAttribute("aria-expanded", "true");
       button.classList.add("open");
@@ -78,10 +80,7 @@ const {
       nav?.classList.remove("invisible", "opacity-0", "translate-y-0");
       nav?.classList.add("visible", "opacity-100", "translate-y-40");
 
-      document.body.classList.add("fixed");
-      document.body.classList.add("overflow-y-scroll");
-      document.body.style.height = "100vh";
-      document.body.style.width = "100%";
+      document.body.classList.add("overflow-y-hidden");
     }
   });
 </script>

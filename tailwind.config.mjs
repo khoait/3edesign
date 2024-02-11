@@ -9,6 +9,7 @@ export default {
       current: "currentColor",
       white: "rgb(var(--rgb-white) / <alpha-value>)",
       black: "rgb(var(--rgb-black) / <alpha-value>)",
+      currentBg: "var(--bg-primary)",
 
       gray: {
         100: "rgb(var(--rgb-gray-100) / <alpha-value>)",
