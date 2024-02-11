@@ -83,7 +83,9 @@ function ArrowButtonContent({
   return (
     <>
       {children && (direction === "right" || direction === "up") ? (
-        <span className="mr-8 text-xl font-medium">{children}</span>
+        <span className="mr-8 inline-block min-w-28 text-xl font-medium">
+          {children}
+        </span>
       ) : null}
 
       <div className="relative inline-flex h-14 w-14 flex-none items-center justify-center p-1">
@@ -133,7 +135,9 @@ function ArrowButtonContent({
       </div>
 
       {children && (direction === "left" || direction === "down") ? (
-        <span className="ml-8 text-xl font-medium">{children}</span>
+        <span className="ml-8 inline-block flex-1 text-xl font-medium">
+          {children}
+        </span>
       ) : null}
     </>
   );

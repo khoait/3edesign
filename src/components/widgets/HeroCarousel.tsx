@@ -1,7 +1,7 @@
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
-import { A11y, Pagination, Parallax } from "swiper/modules";
+import { A11y, Autoplay, Pagination, Parallax } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export interface HeroCarouselProps {
@@ -14,11 +14,15 @@ export const HeroCarousel = ({ slide1, slide2, slide3 }: HeroCarouselProps) => {
   return (
     <>
       <Swiper
-        modules={[Pagination, A11y, Parallax]}
+        modules={[Pagination, A11y, Parallax, Autoplay]}
         slidesPerView={1}
         pagination={{
           clickable: true,
           bulletActiveClass: "swiper-pagination-bullet--active",
+        }}
+        autoplay={{
+          delay: 7000,
+          disableOnInteraction: false,
         }}
         parallax={true}
         //scrollbar={{ draggable: true }}

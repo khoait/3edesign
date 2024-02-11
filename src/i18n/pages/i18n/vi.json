@@ -2,16 +2,16 @@
   "section": {
     "hero": {
       "slide1": {
-        "title": "Nhà đẹp còn được xây từ những mối quan hệ đẹp.",
-        "subtitle": "Thông qua quy trình thiết kế, chúng tôi luôn hợp tác cùng bạn nhằm nắm bắt nhu cầu cụ thể của bạn."
+        "title": "Project 1",
+        "subtitle": "Location 1"
       },
       "slide2": {
-        "title": "Phong cách sống mới.",
-        "subtitle": "Change the way you live life, closer to nature. To love where you live."
+        "title": "Project 2",
+        "subtitle": "Location 2"
       },
       "slide3": {
-        "title": "Efficient journey from start to finish.",
-        "subtitle": "We are committed to providing you with a seamless experience from start to finish."
+        "title": "Project 3",
+        "subtitle": "Location 3"
       }
     },
     "introduction": {
@@ -40,9 +40,9 @@
         "description": "Chúng tôi cung cấp thiết kế cảnh quan với quy trình định hình khu đất để tạo ra một không gian đẹp và tiện dụng."
       }
     },
-    "feature":{
+    "feature": {
       "title": "Những gì bạn mong đợi?",
-      "subtitle": "Đây là các quyền lợi dành riêng cho bạn.", 
+      "subtitle": "Đây là các quyền lợi dành riêng cho bạn.",
       "cta": "Về chúng tôi",
       "feature1": {
         "title": "Sự tận tâm",

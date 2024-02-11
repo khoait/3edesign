@@ -60,4 +60,9 @@
   .carousel-scrollbar {
     @apply !left-1/2 !w-20 -translate-x-1/2;
   }
+
+  .hero-height {
+    height: 100vh;
+    height: 100svh;
+  }
 }
